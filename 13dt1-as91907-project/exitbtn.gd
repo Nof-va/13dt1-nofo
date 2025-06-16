@@ -13,4 +13,4 @@ func _process(delta: float) -> void:
 
 #Called when button is pressed
 func _on_pressed() -> void:
-	get_tree().quit() # exits game scene
+	get_tree().quit() # Exits game scene
