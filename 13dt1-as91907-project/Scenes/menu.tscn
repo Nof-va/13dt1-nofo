@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://btb3f2dkr6xkn" path="res://Fonts/Baby Doll.ttf" id="1_ffcq7"]
 [ext_resource type="Script" path="res://Scripts/startbtn.gd" id="3_2mmim"]
 [ext_resource type="Script" path="res://Scripts/settingsbtn.gd" id="4_s8dp1"]
-[ext_resource type="Script" path="res://exitbtn.gd" id="5_6b7di"]
+[ext_resource type="Script" path="res://Scripts/exitbtn.gd" id="5_6b7di"]
 
 [sub_resource type="Environment" id="Environment_y6j1k"]
 background_mode = 1
