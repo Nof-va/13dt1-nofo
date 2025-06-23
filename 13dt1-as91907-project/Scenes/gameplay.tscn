@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://3t18mjro8ddi"]
+[gd_scene load_steps=5 format=3 uid="uid://3t18mjro8ddi"]
 
 [ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/playerbody.tscn" id="1_1bkrg"]
+[ext_resource type="Script" path="res://Scenes/gameplay.gd" id="1_ofcps"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_l6dbt"]
 
@@ -8,6 +9,7 @@
 size = Vector3(19.3193, 1, 7.2934)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_ofcps")
 
 [node name="Node3D2" parent="." instance=ExtResource("1_1bkrg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.74864, 1.49905, 0)

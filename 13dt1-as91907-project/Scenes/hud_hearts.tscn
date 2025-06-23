@@ -1,3 +1,48 @@
-[gd_scene format=3 uid="uid://cxh13coc00suo"]
+[gd_scene load_steps=2 format=3 uid="uid://cxh13coc00suo"]
 
-[node name="Node3D" type="Node3D"]
+[ext_resource type="Script" path="res://Scripts/hud_hearts.gd" id="1_8qrrh"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8qrrh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 57.0
+offset_top = -80.0
+offset_right = 97.0
+offset_bottom = -40.0
+grow_vertical = 0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 114.0
+offset_top = -80.0
+offset_right = 154.0
+offset_bottom = -40.0
+grow_vertical = 0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 171.0
+offset_top = -80.0
+offset_right = 211.0
+offset_bottom = -40.0
+grow_vertical = 0
+color = Color(1, 0, 0, 1)
