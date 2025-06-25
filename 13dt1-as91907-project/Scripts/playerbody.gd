@@ -31,4 +31,14 @@ func _physics_process(delta: float) -> void:
 	#Camera controller follow player_body position but not on z axis
 	$controller.position.x = lerp($controller.position.x, position.x, 0.05)
 	$controller.position.y = lerp($controller.position.y, position.y, 0.1)
+
+
+func _on_area_3d_body_entered(_body: Node3D) -> void:
+	if Countlives.lives >= 0:
+		Countlives.lives -= 1
+		get_tree().call_deferred("reload_current_scene")
+	if Countlives.lives < 0:
+		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+		Countlives.lives = 3
 	
+	print(Countlives.lives)

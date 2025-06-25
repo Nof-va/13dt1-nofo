@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://qyvxj6m7bb1f"]
+[gd_scene load_steps=5 format=3 uid="uid://qyvxj6m7bb1f"]
 
 [ext_resource type="Script" path="res://Scripts/playerbody.gd" id="1_qyis3"]
+[ext_resource type="PackedScene" uid="uid://cxh13coc00suo" path="res://Scenes/hud_hearts.tscn" id="2_31u11"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dd1i8"]
 
@@ -8,6 +9,8 @@
 
 [node name="Node3D" type="CharacterBody3D"]
 script = ExtResource("1_qyis3")
+
+[node name="Control" parent="." instance=ExtResource("2_31u11")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_dd1i8")
