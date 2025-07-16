@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://3t18mjro8ddi"]
+[gd_scene load_steps=7 format=3 uid="uid://3t18mjro8ddi"]
 
 [ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/playerbody.tscn" id="1_1bkrg"]
 [ext_resource type="Script" path="res://Scripts/gameplay.gd" id="1_ofcps"]
+[ext_resource type="PackedScene" uid="uid://cxh13coc00suo" path="res://Scenes/hud_hearts.tscn" id="3_t4t68"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_l6dbt"]
 
@@ -38,5 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.96975, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.48, 0.6, -0.598)
 shape = SubResource("BoxShape3D_1pbxc")
+
+[node name="lives_hud" parent="." instance=ExtResource("3_t4t68")]
 
 [connection signal="body_entered" from="Area3D" to="Node3D2" method="_on_area_3d_body_entered"]
