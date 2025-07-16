@@ -3,12 +3,6 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-var array_lives : Array[TextureRect]
-
-func _ready() -> void:
-	var parent_lives = $"../lives_hud/HBoxContainer"
-	for child in parent_lives.get_children():
-		array_lives.append(child)
 
 
 func _physics_process(delta: float) -> void:
@@ -37,13 +31,3 @@ func _physics_process(delta: float) -> void:
 	#Camera controller follow player_body position but not on z axis
 	$controller.position.x = lerp($controller.position.x, position.x, 0.05)
 	$controller.position.y = lerp($controller.position.y, position.y, 0.1)
-
-func _on_area_3d_body_entered(_body: Node3D) -> void:
-	if Countlives.lives > 0:
-		Countlives.lives -= 1
-	if Countlives.lives == 0:
-		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
-		Countlives.lives = 3
-	
-	print(Countlives.lives)
-	print(array_lives)

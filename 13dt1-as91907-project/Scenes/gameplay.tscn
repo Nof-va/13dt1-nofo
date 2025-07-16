@@ -1,8 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://3t18mjro8ddi"]
+[gd_scene load_steps=11 format=3 uid="uid://3t18mjro8ddi"]
 
 [ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/playerbody.tscn" id="1_1bkrg"]
 [ext_resource type="Script" path="res://Scripts/gameplay.gd" id="1_ofcps"]
+[ext_resource type="Script" path="res://Scripts/death_zone.gd" id="3_jobk0"]
 [ext_resource type="PackedScene" uid="uid://cxh13coc00suo" path="res://Scenes/hud_hearts.tscn" id="3_t4t68"]
+[ext_resource type="PackedScene" uid="uid://rc5fcal65tce" path="res://Scenes/checkpoint.tscn" id="4_yb5ha"]
+[ext_resource type="Script" path="res://Scenes/checkpoint_manager.gd" id="5_nvlat"]
+[ext_resource type="Script" path="res://Scenes/checkpoint.gd" id="5_w30xl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_l6dbt"]
 
@@ -10,16 +14,20 @@
 size = Vector3(19.3193, 1, 7.2934)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1pbxc"]
-size = Vector3(44.0242, 2.41455, 35.9233)
+size = Vector3(27.5808, 2.41455, 19.8372)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_ofcps")
 
-[node name="Node3D2" parent="." instance=ExtResource("1_1bkrg")]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.536563, 0.25173, -0.805439, 1.12812e-08, 0.95447, 0.298308, 0.84386, -0.160061, 0.512133, -7.45239, 7.95387, 12.1655)
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_1bkrg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.74864, 1.97683, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.67251)
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(19.3251, 0, 0, 0, 1, 0, 0, 0, 7.2974, 0, 0, 0)
@@ -30,16 +38,75 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015564, 0, -0.000335693)
 shape = SubResource("BoxShape3D_73yyx")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.536563, 0.25173, -0.805439, 1.12812e-08, 0.95447, 0.298308, 0.84386, -0.160061, 0.512133, -7.45239, 7.95387, 12.1655)
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.00820297, 0.999966, 0, -0.999966, -0.00820297, 0, 0, 0, 1, 9.30317, -9.22972, -2.67251)
+metadata/_edit_group_ = true
 
-[node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.96975, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+transform = Transform3D(19.3251, 0, 0, 0, 1, 0, 0, 0, 7.2974, 0, 0, 0)
+mesh = SubResource("BoxMesh_l6dbt")
+skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.48, 0.6, -0.598)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015564, 0, -0.000335693)
+shape = SubResource("BoxShape3D_73yyx")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.0283403, 0.999598, 0, -0.999598, -0.0283403, 0, 0, 0, 1, 13.9337, -9.09603, -2.67251)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D3"]
+transform = Transform3D(19.3251, 0, 0, 0, 1, 0, 0, 0, 7.2974, 0, 0, 0)
+mesh = SubResource("BoxMesh_l6dbt")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015564, 0, -0.000335693)
+shape = SubResource("BoxShape3D_73yyx")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="."]
+transform = Transform3D(0.999809, 0.019529, 0, -0.019529, 0.999809, 0, 0, 0, 1, 14.3476, -18.2789, -2.67251)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D4"]
+transform = Transform3D(19.3251, 0, 0, 0, 1, 0, 0, 0, 7.2974, 0, 0, 0)
+mesh = SubResource("BoxMesh_l6dbt")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015564, 0, -0.000335693)
+shape = SubResource("BoxShape3D_73yyx")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.146, 0.146729, -2.673)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D5"]
+transform = Transform3D(19.3251, 0, 0, 0, 1, 0, 0, 0, 7.2974, 0, 0, 0)
+mesh = SubResource("BoxMesh_l6dbt")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015564, 0, -0.000335693)
+shape = SubResource("BoxShape3D_73yyx")
+
+[node name="Area3D2" type="Area3D" parent="." groups=["Player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.520016, -3.88358, 0)
+script = ExtResource("3_jobk0")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.74172, 0.6, -3.9855)
 shape = SubResource("BoxShape3D_1pbxc")
 
-[node name="lives_hud" parent="." instance=ExtResource("3_t4t68")]
+[node name="HudHearts" parent="." instance=ExtResource("3_t4t68")]
 
-[connection signal="body_entered" from="Area3D" to="Node3D2" method="_on_area_3d_body_entered"]
+[node name="Checkpoint" type="Node3D" parent="."]
+script = ExtResource("5_nvlat")
+
+[node name="Area3D" parent="Checkpoint" instance=ExtResource("4_yb5ha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4718, 0, -3.10746)
+script = ExtResource("5_w30xl")
+
+[connection signal="body_entered" from="Area3D2" to="Area3D2" method="_on_body_entered"]
+[connection signal="body_entered" from="Checkpoint/Area3D" to="Checkpoint/Area3D" method="_on_body_entered"]
