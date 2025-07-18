@@ -5,7 +5,7 @@
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_right = 464.0
+offset_right = 1146.0
 offset_bottom = 131.0
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
