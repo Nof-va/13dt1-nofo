@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="13DT1 Big Project"
-run/main_scene="res://Scenes/menu.tscn"
+run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://Images/icon.svg"
 
 [autoload]
 
-Countlives="*res://Scripts/countlives.gd"
+Global="*res://Scripts/global.gd"
 
 [global_group]
 

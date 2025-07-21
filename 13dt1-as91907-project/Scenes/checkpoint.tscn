@@ -1,7 +1,71 @@
-[gd_scene load_steps=2 format=3 uid="uid://rc5fcal65tce"]
+[gd_scene load_steps=6 format=3 uid="uid://rc5fcal65tce"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7qvnw"]
 size = Vector3(1, 5.63391, 8.58658)
+
+[sub_resource type="TorusMesh" id="TorusMesh_eclpt"]
+
+[sub_resource type="Animation" id="Animation_ysw5s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5708, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ujtob"]
+resource_name = "checkpoint_reached"
+length = 0.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.5708, 0, 0), Vector3(1.5708, 3.14159, 0), Vector3(1.5708, 6.28319, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rwtyb"]
+_data = {
+"RESET": SubResource("Animation_ysw5s"),
+"checkpoint_reached": SubResource("Animation_ujtob")
+}
 
 [node name="Area3D" type="Area3D"]
 
@@ -11,3 +75,16 @@ shape = SubResource("BoxShape3D_7qvnw")
 
 [node name="Respawn" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.85144, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -3.61999e-07, -1, 0, 0.1, -3.61999e-06, 0, 0, 0)
+mesh = SubResource("TorusMesh_eclpt")
+skeleton = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/MeshInstance3D"]
+libraries = {
+"": SubResource("AnimationLibrary_rwtyb")
+}

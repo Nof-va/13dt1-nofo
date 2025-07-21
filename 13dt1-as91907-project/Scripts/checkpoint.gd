@@ -8,10 +8,11 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
 		checkpoint_manager.spawn_point = $Respawn.global_position
+		$Node3D/MeshInstance3D/AnimationPlayer.play("checkpoint_reached")
