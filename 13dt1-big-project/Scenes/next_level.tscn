@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdn2sfrfu2sa4"]
+[gd_scene load_steps=4 format=3 uid="uid://cdn2sfrfu2sa4"]
+
+[ext_resource type="Script" path="res://Scripts/next_level.gd" id="1_b663h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_swks8"]
 size = Vector3(1, 5.63391, 8.58658)
 
 [sub_resource type="TorusMesh" id="TorusMesh_e2nun"]
 
-[node name="Area3D" type="Area3D"]
+[node name="Area3D" type="Area3D" groups=["Player"]]
+script = ExtResource("1_b663h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.31696, 0.321478)
@@ -18,3 +21,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29153, 0)
 transform = Transform3D(-1.74846e-07, -2, 0, 4, -8.74228e-08, 0, 0, 0, 4, 0, 0, 0)
 mesh = SubResource("TorusMesh_e2nun")
 skeleton = NodePath("../..")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

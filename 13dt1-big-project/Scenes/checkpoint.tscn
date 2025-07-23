@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://rc5fcal65tce"]
+[gd_scene load_steps=7 format=3 uid="uid://rc5fcal65tce"]
+
+[ext_resource type="Script" path="res://Scripts/checkpoint.gd" id="1_q73d6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7qvnw"]
 size = Vector3(1, 5.63391, 8.58658)
@@ -68,6 +70,7 @@ _data = {
 }
 
 [node name="Area3D" type="Area3D"]
+script = ExtResource("1_q73d6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.31696, 0.321478)
@@ -88,3 +91,5 @@ skeleton = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_rwtyb")
 }
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
