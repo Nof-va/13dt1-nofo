@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdn2sfrfu2sa4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_swks8"]
+size = Vector3(1, 5.63391, 8.58658)
+
+[sub_resource type="TorusMesh" id="TorusMesh_e2nun"]
+
+[node name="Area3D" type="Area3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.31696, 0.321478)
+shape = SubResource("BoxShape3D_swks8")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29153, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-1.74846e-07, -2, 0, 4, -8.74228e-08, 0, 0, 0, 4, 0, 0, 0)
+mesh = SubResource("TorusMesh_e2nun")
+skeleton = NodePath("../..")

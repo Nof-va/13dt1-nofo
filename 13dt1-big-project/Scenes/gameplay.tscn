@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/player_body.tscn" id="1_1bkrg"]
 [ext_resource type="Script" path="res://Scripts/death_zone.gd" id="3_jobk0"]
 [ext_resource type="PackedScene" uid="uid://rc5fcal65tce" path="res://Scenes/checkpoint.tscn" id="4_yb5ha"]
-[ext_resource type="Script" path="res://Scripts/checkpoint_manager.gd" id="5_u86mw"]
 [ext_resource type="Script" path="res://Scripts/checkpoint.gd" id="5_w30xl"]
+[ext_resource type="PackedScene" uid="uid://cdn2sfrfu2sa4" path="res://Scenes/next_level.tscn" id="5_wxni0"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_l6dbt"]
 
@@ -236,18 +236,15 @@ metadata/_edit_group_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.0368, 0.6, -3.9855)
 shape = SubResource("BoxShape3D_3g1gx")
 
-[node name="CheckpointManager" type="Node3D" parent="."]
-script = ExtResource("5_u86mw")
-
-[node name="Checkpoint" parent="CheckpointManager" instance=ExtResource("4_yb5ha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6815, 0, -3.26642)
-script = ExtResource("5_w30xl")
-
-[node name="Checkpoint2" parent="CheckpointManager" instance=ExtResource("4_yb5ha")]
+[node name="Checkpoint" parent="." instance=ExtResource("4_yb5ha")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10576, 0, -3.26642)
 script = ExtResource("5_w30xl")
 
-[node name="Checkpoint3" parent="CheckpointManager" instance=ExtResource("4_yb5ha")]
+[node name="Checkpoint2" parent="." instance=ExtResource("4_yb5ha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6815, 0, -3.26642)
+script = ExtResource("5_w30xl")
+
+[node name="Checkpoint3" parent="." instance=ExtResource("4_yb5ha")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.8114, 0.646729, -2.07153)
 script = ExtResource("5_w30xl")
 
@@ -264,9 +261,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.9481)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3588, -4.65787, 1.35647)
 shape = SubResource("BoxShape3D_x23wt")
 
+[node name="NextLevel" parent="." instance=ExtResource("5_wxni0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.5375, 0.921374, -3.02118)
+
 [connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_body_entered"]
 [connection signal="body_entered" from="DeathZone2" to="DeathZone2" method="_on_body_entered"]
 [connection signal="body_entered" from="DeathZone3" to="DeathZone3" method="_on_body_entered"]
-[connection signal="body_entered" from="CheckpointManager/Checkpoint" to="CheckpointManager/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="CheckpointManager/Checkpoint2" to="CheckpointManager/Checkpoint2" method="_on_body_entered"]
-[connection signal="body_entered" from="CheckpointManager/Checkpoint3" to="CheckpointManager/Checkpoint3" method="_on_body_entered"]
+[connection signal="body_entered" from="Checkpoint" to="Checkpoint" method="_on_body_entered"]
+[connection signal="body_entered" from="Checkpoint2" to="Checkpoint2" method="_on_body_entered"]
+[connection signal="body_entered" from="Checkpoint3" to="Checkpoint3" method="_on_body_entered"]

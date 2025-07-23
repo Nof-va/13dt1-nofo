@@ -1,6 +1,5 @@
 extends Area3D
 
-var checkpoint_manager
 var player
 var game_over = preload("res://Scenes/main_menu.tscn")
 
@@ -8,7 +7,6 @@ var game_over = preload("res://Scenes/main_menu.tscn")
 func _ready() -> void:
 	Global.lives = 3
 	player = get_parent().get_node("Player")
-	checkpoint_manager = get_parent().get_node("CheckpointManager")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,5 +27,5 @@ func _on_body_entered(body: Node3D) -> void:
 
 func kill_player():
 	Global.lives -= 1
-	player.position = checkpoint_manager.spawn_point
+	player.position = Global.spawn_point
 	

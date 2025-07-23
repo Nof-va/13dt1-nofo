@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cex1rnecp1ak8"]
+
+[ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/player_body.tscn" id="1_x1mtq"]
+[ext_resource type="PackedScene" uid="uid://rc5fcal65tce" path="res://Scenes/checkpoint.tscn" id="2_n4ay3"]
+[ext_resource type="Script" path="res://Scripts/checkpoint.gd" id="3_aa1we"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wmg1i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cdv5c"]
+size = Vector3(19.3193, 1, 7.2934)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.536563, 0.25173, -0.805439, 1.12812e-08, 0.95447, 0.298308, 0.84386, -0.160061, 0.512133, -7.45239, 7.95387, 12.1655)
+
+[node name="Player" parent="." instance=ExtResource("1_x1mtq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.74864, 1.97683, 0)
+
+[node name="Platform" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.67251)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform"]
+transform = Transform3D(19.3251, 0, 0, 0, 1, 0, 0, 0, 7.2974, 0, 0, 0)
+mesh = SubResource("BoxMesh_wmg1i")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015564, 0, -0.000335693)
+shape = SubResource("BoxShape3D_cdv5c")
+
+[node name="Checkpoint" parent="." instance=ExtResource("2_n4ay3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10576, 0, -3.26642)
+script = ExtResource("3_aa1we")
+
+[connection signal="body_entered" from="Checkpoint" to="Checkpoint" method="_on_body_entered"]
