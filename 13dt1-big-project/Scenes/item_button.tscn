@@ -1,9 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://dk6jsjqogbpjp"]
+[gd_scene load_steps=8 format=3 uid="uid://dk6jsjqogbpjp"]
 
 [ext_resource type="Script" path="res://Scripts/item_button.gd" id="1_m7sj4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iucbt"]
 size = Vector3(3.58606, 3.12732, 3.42773)
+
+[sub_resource type="Animation" id="Animation_cd8uf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/Node3D2/MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_vr8ib"]
 resource_name = "button_pressed"
@@ -21,21 +36,6 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, -0.164473, 0), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_cd8uf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Node3D2/MeshInstance3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_it0ee"]
 _data = {
 "RESET": SubResource("Animation_cd8uf"),
@@ -43,6 +43,9 @@ _data = {
 }
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_kjfej"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xui7j"]
+albedo_color = Color(1, 0, 0, 1)
 
 [node name="Area3D" type="Area3D" groups=["Player"]]
 script = ExtResource("1_m7sj4")
@@ -57,7 +60,7 @@ libraries = {
 }
 
 [node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.27933, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27933, 0)
 
 [node name="Node3D2" type="Node3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0.282954)
@@ -66,6 +69,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0.282954)
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_kjfej")
 skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_xui7j")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

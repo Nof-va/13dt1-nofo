@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://qyvxj6m7bb1f"]
+[gd_scene load_steps=7 format=3 uid="uid://qyvxj6m7bb1f"]
 
 [ext_resource type="Script" path="res://Scripts/playerbody.gd" id="1_qyis3"]
+[ext_resource type="PackedScene" uid="uid://bow0b6gfwhjcm" path="res://Scenes/hearts.tscn" id="2_rg6xc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dd1i8"]
 
@@ -18,8 +19,9 @@ albedo_color = Color(0, 0.812099, 0.824048, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1m5js"]
 
-[node name="Node3D" type="CharacterBody3D" groups=["Player"]]
+[node name="Node3D" type="CharacterBody3D" node_paths=PackedStringArray("something") groups=["Player"]]
 script = ExtResource("1_qyis3")
+something = NodePath("CanvasLayer/Control")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_dd1i8")
@@ -35,3 +37,7 @@ top_level = true
 transform = Transform3D(1, 0, 0, 0, 0.961454, 0.274966, 0, -0.274966, 0.961454, 2.5, 2.778, 5.818)
 
 [node name="Camera3D" type="Camera3D" parent="controller/target"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("2_rg6xc")]
