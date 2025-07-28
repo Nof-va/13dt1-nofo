@@ -14,6 +14,7 @@ func _on_body_entered(body: Node3D) -> void:
 		kill_player()
 	if body.is_in_group("Player") and Global.lives == 0:
 		get_tree().change_scene_to_packed.bind(game_over).call_deferred()
+		Global.lives = 3
 	print(Global.lives)
 
 # Original version of changing to different scene caused the error of removing physicsbody 

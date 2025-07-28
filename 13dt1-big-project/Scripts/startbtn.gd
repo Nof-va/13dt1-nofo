@@ -9,4 +9,4 @@ func _ready() -> void:
 
 #Called when button is pressed
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/gameplay.tscn") # Transports user from current scene to gameplay scnene
+	get_tree().change_scene_to_file("res://Scenes/gameplay.tscn") # Transports user from current scene to gameplay scene

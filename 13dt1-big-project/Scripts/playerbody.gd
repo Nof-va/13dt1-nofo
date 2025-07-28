@@ -4,6 +4,8 @@ extends CharacterBody3D
 var speed = 5
 const JUMP_VELOCITY = 4.5
 
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta: float) -> void:
 	

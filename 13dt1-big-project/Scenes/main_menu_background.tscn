@@ -1,6 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ytmbd0mmgf1v"]
-
-[sub_resource type="GDScript" id="GDScript_gl4i6"]
+[gd_scene load_steps=5 format=3 uid="uid://ytmbd0mmgf1v"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_vsxmx"]
 
@@ -44,7 +42,6 @@ _data = {
 }
 
 [node name="Node3D" type="Node3D"]
-script = SubResource("GDScript_gl4i6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.60007)
