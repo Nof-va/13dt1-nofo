@@ -3,32 +3,41 @@ extends CharacterBody3D
 @export var something: Node
 var speed = 5
 const JUMP_VELOCITY = 4.5
+var menu_pack = preload("res://Scenes/in_game_menu.tscn")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta: float) -> void:
 	
+	
+	var menu = menu_pack.instantiate()
+
+	if Input.is_action_just_pressed("pause"):
+		get_parent().add_child(menu)
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		Global.able_move = false
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		speed = 5
 	
-	if Input.is_action_just_pressed("run") and is_on_floor():
+	if Input.is_action_just_pressed("run") and is_on_floor() and Global.able_move == true:
 		speed += 5
 	
 	if Input.is_action_just_released("run"):
 		speed -= 5
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and Global.able_move == true:
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("move_left", "move_right", "move_away", "move_toward")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
+	if direction and Global.able_move == true:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
 	else:

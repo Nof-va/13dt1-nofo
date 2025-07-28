@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://rc5fcal65tce"]
 
-[ext_resource type="Script" path="res://Scripts/checkpoint.gd" id="1_q73d6"]
+[ext_resource type="Script" uid="uid://mkt3i28db4p5" path="res://Scripts/checkpoint.gd" id="1_q73d6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7qvnw"]
 size = Vector3(1, 5.63391, 8.58658)
@@ -68,8 +68,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rwtyb"]
 _data = {
-"RESET": SubResource("Animation_ysw5s"),
-"checkpoint_reached": SubResource("Animation_ujtob")
+&"RESET": SubResource("Animation_ysw5s"),
+&"checkpoint_reached": SubResource("Animation_ujtob")
 }
 
 [node name="Area3D" type="Area3D"]
@@ -93,7 +93,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_pxfx4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/MeshInstance3D"]
 libraries = {
-"": SubResource("AnimationLibrary_rwtyb")
+&"": SubResource("AnimationLibrary_rwtyb")
 }
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

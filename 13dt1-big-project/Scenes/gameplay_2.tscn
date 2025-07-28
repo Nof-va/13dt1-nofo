@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/player_body.tscn" id="1_x1mtq"]
 [ext_resource type="PackedScene" uid="uid://rc5fcal65tce" path="res://Scenes/checkpoint.tscn" id="2_n4ay3"]
 [ext_resource type="PackedScene" uid="uid://dk6jsjqogbpjp" path="res://Scenes/item_button.tscn" id="4_o6p6b"]
-[ext_resource type="Script" path="res://Scripts/death_zone.gd" id="4_xq66o"]
+[ext_resource type="Script" uid="uid://bav040fifgynp" path="res://Scripts/death_zone.gd" id="4_xq66o"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_wmg1i"]
 

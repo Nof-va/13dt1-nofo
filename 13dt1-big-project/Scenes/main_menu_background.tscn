@@ -37,8 +37,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0m8r2"]
 _data = {
-"RESET": SubResource("Animation_uexeo"),
-"orbit-loop": SubResource("Animation_85v7j")
+&"RESET": SubResource("Animation_uexeo"),
+&"orbit-loop": SubResource("Animation_85v7j")
 }
 
 [node name="Node3D" type="Node3D"]
@@ -52,6 +52,6 @@ transform = Transform3D(0.101489, -0.395132, 0.913001, -0.316376, 0.857275, 0.40
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DirectionalLight3D"]
 libraries = {
-"": SubResource("AnimationLibrary_0m8r2")
+&"": SubResource("AnimationLibrary_0m8r2")
 }
 autoplay = "orbit-loop"

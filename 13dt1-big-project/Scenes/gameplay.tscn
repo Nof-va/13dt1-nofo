@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://3t18mjro8ddi"]
 
 [ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/player_body.tscn" id="1_1bkrg"]
-[ext_resource type="Script" path="res://Scripts/death_zone.gd" id="3_jobk0"]
+[ext_resource type="Script" uid="uid://bav040fifgynp" path="res://Scripts/death_zone.gd" id="3_jobk0"]
 [ext_resource type="PackedScene" uid="uid://rc5fcal65tce" path="res://Scenes/checkpoint.tscn" id="4_yb5ha"]
 [ext_resource type="PackedScene" uid="uid://cdn2sfrfu2sa4" path="res://Scenes/next_level.tscn" id="5_wxni0"]
 

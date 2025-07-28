@@ -1,0 +1,129 @@
+[gd_scene load_steps=11 format=3 uid="uid://bui0dhhoktgxu"]
+
+[ext_resource type="FontFile" uid="uid://btb3f2dkr6xkn" path="res://Fonts/Baby Doll.ttf" id="1_2rnyg"]
+[ext_resource type="Script" uid="uid://chawje4lj461o" path="res://Scripts/resumebtn.gd" id="2_2rnyg"]
+[ext_resource type="Script" uid="uid://dfhbes2tus1xv" path="res://Scripts/settingsbtn.gd" id="3_f1ur8"]
+[ext_resource type="Script" uid="uid://d0u2txnm4cq1" path="res://Scripts/exitbtn.gd" id="4_bn643"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ucpqp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ixq06"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4dmst"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x3jqx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fu121"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lgl56"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -172.5
+offset_right = 172.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.544974, 0.544974, 0.544974, 1)
+theme_override_fonts/font = ExtResource("1_2rnyg")
+theme_override_font_sizes/font_size = 90
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 95.08)
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(0.176471, 0.486275, 0, 1)
+theme_override_colors/font_hover_color = Color(0.176471, 0.784314, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.666441, 1, 0.620973, 1)
+theme_override_fonts/font = ExtResource("1_2rnyg")
+theme_override_font_sizes/font_size = 90
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ucpqp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ixq06")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4dmst")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_x3jqx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fu121")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lgl56")
+text = "Resume"
+script = ExtResource("2_2rnyg")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 37.67)
+layout_mode = 2
+
+[node name="Settingsbtn" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(0, 0.424667, 0.49, 1)
+theme_override_colors/font_hover_color = Color(0, 0.676, 0.78, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.62, 0.949333, 1, 1)
+theme_override_fonts/font = ExtResource("1_2rnyg")
+theme_override_font_sizes/font_size = 90
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ucpqp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ixq06")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4dmst")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_x3jqx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fu121")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lgl56")
+text = "Settings"
+script = ExtResource("3_f1ur8")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 37.67)
+layout_mode = 2
+
+[node name="Exitbtn" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(0.49, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.78, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.62, 0.62, 1)
+theme_override_fonts/font = ExtResource("1_2rnyg")
+theme_override_font_sizes/font_size = 90
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ucpqp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ixq06")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4dmst")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_x3jqx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fu121")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lgl56")
+text = "Exit"
+icon_alignment = 1
+script = ExtResource("4_bn643")
+
+[connection signal="pressed" from="Control/VBoxContainer/Resume" to="Control/VBoxContainer/Resume" method="_on_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Settingsbtn" to="Control/VBoxContainer/Settingsbtn" method="_on_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Exitbtn" to="Control/VBoxContainer/Exitbtn" method="_on_pressed"]

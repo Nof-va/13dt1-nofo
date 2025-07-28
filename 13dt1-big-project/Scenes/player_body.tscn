@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://qyvxj6m7bb1f"]
 
-[ext_resource type="Script" path="res://Scripts/playerbody.gd" id="1_qyis3"]
+[ext_resource type="Script" uid="uid://bp12s3pw0xiyh" path="res://Scripts/playerbody.gd" id="1_qyis3"]
 [ext_resource type="PackedScene" uid="uid://bow0b6gfwhjcm" path="res://Scenes/hearts.tscn" id="2_rg6xc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dd1i8"]
