@@ -12,11 +12,13 @@ func _physics_process(delta: float) -> void:
 	
 	
 	var menu = menu_pack.instantiate()
+	var tree = get_tree()
 
-	if Input.is_action_just_pressed("pause"):
-		get_parent().add_child(menu)
+	if Input.is_action_just_pressed("pause") and Global.able_move == true:
+		get_parent().get_parent().add_child(menu)
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		Global.able_move = false
+		tree.paused = !tree.paused
+	
 	
 	# Add the gravity.
 	if not is_on_floor():

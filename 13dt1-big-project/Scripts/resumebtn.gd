@@ -1,6 +1,6 @@
 extends Button
 
-
 func _on_pressed() -> void:
 	get_parent().get_parent().get_parent().queue_free()
-	Global.able_move = true
+	var tree = get_parent().get_parent().get_parent().get_parent().get_tree()
+	tree.paused = !tree.paused

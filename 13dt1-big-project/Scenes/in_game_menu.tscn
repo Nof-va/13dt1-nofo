@@ -124,6 +124,17 @@ text = "Exit"
 icon_alignment = 1
 script = ExtResource("4_bn643")
 
+[node name="ColorRect" type="ColorRect" parent="Control"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -559.0
+offset_top = -311.0
+offset_right = 600.0
+offset_bottom = 350.0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+color = Color(0, 0, 0, 0.411765)
+
 [connection signal="pressed" from="Control/VBoxContainer/Resume" to="Control/VBoxContainer/Resume" method="_on_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Settingsbtn" to="Control/VBoxContainer/Settingsbtn" method="_on_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Exitbtn" to="Control/VBoxContainer/Exitbtn" method="_on_pressed"]
