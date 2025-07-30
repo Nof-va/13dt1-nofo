@@ -4,7 +4,10 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2xy6t"]
 
-[node name="RigidBody3D" type="RigidBody3D"]
+[node name="RigidBody3D" type="RigidBody3D" groups=["Moveable"]]
+disable_mode = 2
+collision_layer = 14
+collision_mask = 14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_37xia")

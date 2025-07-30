@@ -20,6 +20,8 @@ albedo_color = Color(0, 0.812099, 0.824048, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1m5js"]
 
 [node name="Node3D" type="CharacterBody3D" node_paths=PackedStringArray("something") groups=["Player"]]
+collision_layer = 15
+collision_mask = 15
 script = ExtResource("1_qyis3")
 something = NodePath("Control")
 
@@ -39,3 +41,7 @@ transform = Transform3D(1, 0, 0, 0, 0.961454, 0.274966, 0, -0.274966, 0.961454, 
 [node name="Camera3D" type="Camera3D" parent="controller/target"]
 
 [node name="Control" parent="." instance=ExtResource("2_rg6xc")]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(2, 0, 0)
+collision_mask = 8

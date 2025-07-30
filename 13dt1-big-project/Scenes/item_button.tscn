@@ -47,7 +47,7 @@ _data = {
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xui7j"]
 albedo_color = Color(1, 0, 0, 1)
 
-[node name="Area3D" type="Area3D" groups=["Player"]]
+[node name="Area3D" type="Area3D"]
 script = ExtResource("1_m7sj4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

@@ -17,7 +17,7 @@ size = Vector3(131.561, 28.8941, 1)
 size = Vector3(119.913, 28.8941, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cq8k4"]
-size = Vector3(27.5808, 2.41455, 19.8372)
+size = Vector3(35.1737, 2.41455, 19.8372)
 
 [node name="Node3D" type="Node3D"]
 
@@ -31,6 +31,8 @@ transform = Transform3D(0.536563, 0.25173, -0.805439, 1.12812e-08, 0.95447, 0.29
 
 [node name="Platform" type="StaticBody3D" parent="Pausable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.67251)
+collision_layer = 4
+collision_mask = 4
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pausable/Platform"]
@@ -58,13 +60,13 @@ shape = SubResource("BoxShape3D_6rvdd")
 [node name="Checkpoint" parent="Pausable" instance=ExtResource("2_n4ay3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10576, 0, -3.26642)
 
-[node name="DeathZone" type="Area3D" parent="Pausable" groups=["Player"]]
+[node name="DeathZone" type="Area3D" parent="Pausable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.520016, -3.88358, 0)
 script = ExtResource("4_xq66o")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pausable/DeathZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.74172, 0.6, -3.9855)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.94527, 0.6, -3.9855)
 shape = SubResource("BoxShape3D_cq8k4")
 
 [node name="Area3D" parent="Pausable" instance=ExtResource("4_o6p6b")]

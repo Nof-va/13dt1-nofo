@@ -5,15 +5,15 @@ var speed = 5
 const JUMP_VELOCITY = 4.5
 var menu_pack = preload("res://Scenes/in_game_menu.tscn")
 var pause_is = false
+@onready var raycast = $RayCast3D
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta: float) -> void:
 	
-	
-	var menu = menu_pack.instantiate()
 	var tree = get_tree()
+	var menu = menu_pack.instantiate()
 
 	if Input.is_action_just_pressed("pause"):
 		if pause_is == false:
@@ -21,6 +21,10 @@ func _physics_process(delta: float) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			tree.paused = !tree.paused
 			pause_is = true
+	
+	
+	if raycast.is_colliding():
+		pass
 	
 	# Add the gravity.
 	if not is_on_floor():

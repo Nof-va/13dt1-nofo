@@ -60,11 +60,11 @@ process_mode = 3
 [node name="Pausable" type="Node3D" parent="."]
 process_mode = 1
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Pausable"]
-transform = Transform3D(0.536563, 0.25173, -0.805439, 1.12812e-08, 0.95447, 0.298308, 0.84386, -0.160061, 0.512133, -7.45239, 7.95387, 12.1655)
-
 [node name="Player" parent="Pausable" instance=ExtResource("1_1bkrg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10576, 2.94682, -3.26642)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Pausable"]
+transform = Transform3D(0.536563, 0.25173, -0.805439, 1.12812e-08, 0.95447, 0.298308, 0.84386, -0.160061, 0.512133, -7.45239, 7.95387, 12.1655)
 
 [node name="Platform" type="StaticBody3D" parent="Pausable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.67251)
@@ -260,7 +260,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015564, 0, -0.000335693)
 shape = SubResource("BoxShape3D_73yyx")
 
-[node name="DeathZone" type="Area3D" parent="Pausable" groups=["Player"]]
+[node name="DeathZone" type="Area3D" parent="Pausable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.520016, -3.88358, 0)
 script = ExtResource("3_jobk0")
 metadata/_edit_group_ = true
@@ -269,7 +269,7 @@ metadata/_edit_group_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.74172, 0.6, -3.9855)
 shape = SubResource("BoxShape3D_1pbxc")
 
-[node name="DeathZone2" type="Area3D" parent="Pausable" groups=["Player"]]
+[node name="DeathZone2" type="Area3D" parent="Pausable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9143, -12.3695, 0)
 script = ExtResource("3_jobk0")
 metadata/_edit_group_ = true
@@ -278,7 +278,7 @@ metadata/_edit_group_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.38912, 0.6, -3.9855)
 shape = SubResource("BoxShape3D_r6gl3")
 
-[node name="DeathZone3" type="Area3D" parent="Pausable" groups=["Player"]]
+[node name="DeathZone3" type="Area3D" parent="Pausable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.0933, -6.96277, 0)
 script = ExtResource("3_jobk0")
 metadata/_edit_group_ = true
