@@ -21,7 +21,7 @@ albedo_color = Color(0, 0.812099, 0.824048, 1)
 
 [node name="Node3D" type="CharacterBody3D" node_paths=PackedStringArray("something") groups=["Player"]]
 script = ExtResource("1_qyis3")
-something = NodePath("CanvasLayer/Control")
+something = NodePath("Control")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_dd1i8")
@@ -38,6 +38,4 @@ transform = Transform3D(1, 0, 0, 0, 0.961454, 0.274966, 0, -0.274966, 0.961454, 
 
 [node name="Camera3D" type="Camera3D" parent="controller/target"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" parent="CanvasLayer" instance=ExtResource("2_rg6xc")]
+[node name="Control" parent="." instance=ExtResource("2_rg6xc")]

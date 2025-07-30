@@ -11,11 +11,6 @@ func reset_lives():
 		add_life()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func add_life():
 	var hearts = single_heart.instantiate()
 	$Hearts.add_child(hearts)
