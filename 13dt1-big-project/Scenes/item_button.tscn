@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bg48pjroln272" path="res://Scripts/item_button.gd" id="1_m7sj4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iucbt"]
-size = Vector3(3.58606, 3.12732, 3.42773)
+size = Vector3(3.58606, 5.12213, 3.42773)
 
 [sub_resource type="Animation" id="Animation_cd8uf"]
 length = 0.001
@@ -51,7 +51,7 @@ albedo_color = Color(1, 0, 0, 1)
 script = ExtResource("1_m7sj4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.019104, 0.913119, -0.93634)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.019104, 0.913119, 0.0610659)
 shape = SubResource("BoxShape3D_iucbt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -70,6 +70,9 @@ transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_kjfej")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_xui7j")
+
+[node name="SpawnItem" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.88489, 2.23109, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

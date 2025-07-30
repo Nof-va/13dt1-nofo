@@ -4,6 +4,7 @@ extends CharacterBody3D
 var speed = 5
 const JUMP_VELOCITY = 4.5
 var menu_pack = preload("res://Scenes/in_game_menu.tscn")
+var pause_is = false
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -13,13 +14,13 @@ func _physics_process(delta: float) -> void:
 	
 	var menu = menu_pack.instantiate()
 	var tree = get_tree()
-	var pause_is = false
 
 	if Input.is_action_just_pressed("pause"):
 		if pause_is == false:
 			get_parent().get_parent().add_child(menu)
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			tree.paused = !tree.paused
+			pause_is = true
 	
 	# Add the gravity.
 	if not is_on_floor():
