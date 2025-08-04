@@ -7,7 +7,7 @@ func _ready():
 	reset_lives()
 
 func reset_lives():
-	for i in range(0,Global.lives):
+	for i in range(0,3):
 		add_life()
 
 

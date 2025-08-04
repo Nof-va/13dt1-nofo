@@ -1,11 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://rs6de330fq8m"]
+[gd_scene load_steps=11 format=3 uid="uid://rs6de330fq8m"]
 
 [ext_resource type="PackedScene" uid="uid://ytmbd0mmgf1v" path="res://Scenes/main_menu_background.tscn" id="1_2cdya"]
 [ext_resource type="Script" uid="uid://dvj1gp3c7m7hh" path="res://Scripts/main_menu.gd" id="1_tf75a"]
 [ext_resource type="FontFile" uid="uid://btb3f2dkr6xkn" path="res://Fonts/Baby Doll.ttf" id="2_0x5qc"]
-[ext_resource type="Script" uid="uid://ddnnh33hosqnm" path="res://Scripts/startbtn.gd" id="3_hq4d5"]
-[ext_resource type="Script" uid="uid://dfhbes2tus1xv" path="res://Scripts/settingsbtn.gd" id="4_52b02"]
-[ext_resource type="Script" uid="uid://d0u2txnm4cq1" path="res://Scripts/exitbtn.gd" id="5_3drxx"]
 
 [sub_resource type="Environment" id="Environment_y6j1k"]
 background_mode = 1
@@ -99,7 +96,6 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_61rum")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_o584s")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_wxmuh")
 text = "Play"
-script = ExtResource("3_hq4d5")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
@@ -122,7 +118,6 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_61rum")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_o584s")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_wxmuh")
 text = "Settings"
-script = ExtResource("4_52b02")
 
 [node name="MarginContainer2" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
@@ -145,8 +140,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_61rum")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_o584s")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_wxmuh")
 text = "Exit"
-script = ExtResource("5_3drxx")
 
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Startbtn" to="Control/MarginContainer/VBoxContainer/Startbtn" method="_on_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Settingsbtn" to="Control/MarginContainer/VBoxContainer/Settingsbtn" method="_on_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Exitbtn" to="Control/MarginContainer/VBoxContainer/Exitbtn" method="_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Startbtn" to="." method="_on_startbtn_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Settingsbtn" to="." method="_on_settingsbtn_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Exitbtn" to="." method="_on_exitbtn_pressed"]

@@ -16,9 +16,8 @@ func _on_body_entered(body: Node3D) -> void:
 		get_tree().change_scene_to_packed.bind(game_over).call_deferred()
 		Global.lives = 3
 	print(Global.lives)
-
-# Original version of changing to different scene caused the error of removing physicsbody 
-# get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	if body.is_in_group("Moveable"):
+		queue_free()
 
 # Puts player to last checkpoint
 func kill_player():

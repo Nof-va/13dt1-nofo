@@ -1,9 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bui0dhhoktgxu"]
+[gd_scene load_steps=9 format=3 uid="uid://bui0dhhoktgxu"]
 
 [ext_resource type="FontFile" uid="uid://btb3f2dkr6xkn" path="res://Fonts/Baby Doll.ttf" id="1_2rnyg"]
-[ext_resource type="Script" uid="uid://chawje4lj461o" path="res://Scripts/resumebtn.gd" id="2_2rnyg"]
-[ext_resource type="Script" uid="uid://dfhbes2tus1xv" path="res://Scripts/settingsbtn.gd" id="3_f1ur8"]
-[ext_resource type="Script" uid="uid://d0u2txnm4cq1" path="res://Scripts/exitbtn.gd" id="4_bn643"]
+[ext_resource type="Script" uid="uid://chawje4lj461o" path="res://Scripts/in_game_menu.gd" id="2_2rnyg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ucpqp"]
 
@@ -98,7 +96,6 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_x3jqx")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_fu121")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_lgl56")
 text = "Settings"
-script = ExtResource("3_f1ur8")
 
 [node name="MarginContainer2" type="MarginContainer" parent="Control/VBoxContainer"]
 custom_minimum_size = Vector2(0, 37.67)
@@ -122,7 +119,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_fu121")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_lgl56")
 text = "Exit"
 icon_alignment = 1
-script = ExtResource("4_bn643")
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 show_behind_parent = true
@@ -136,5 +132,5 @@ mouse_force_pass_scroll_events = false
 color = Color(0, 0, 0, 0.411765)
 
 [connection signal="pressed" from="Control/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/Settingsbtn" to="Control/VBoxContainer/Settingsbtn" method="_on_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/Exitbtn" to="Control/VBoxContainer/Exitbtn" method="_on_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Settingsbtn" to="." method="_on_settingsbtn_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Exitbtn" to="." method="_on_exitbtn_pressed"]

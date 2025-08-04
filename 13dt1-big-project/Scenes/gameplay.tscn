@@ -297,6 +297,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6815, 0, -3.26642)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.8114, 0.646729, -2.07153)
 
 [node name="SideWall" type="StaticBody3D" parent="Pausable"]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pausable/SideWall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8515, -4.65787, 1.35647)
@@ -304,6 +305,7 @@ shape = SubResource("BoxShape3D_tmhmw")
 
 [node name="SideWall2" type="StaticBody3D" parent="Pausable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.9481)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pausable/SideWall2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3588, -4.65787, 1.35647)
