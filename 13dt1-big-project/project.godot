@@ -89,3 +89,7 @@ run={
 3d_physics/layer_4="MoveableItems"
 3d_physics/layer_5="ImmovableItems"
 3d_physics/layer_6="Deathzone"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"

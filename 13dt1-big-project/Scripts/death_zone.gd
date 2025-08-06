@@ -13,6 +13,7 @@ func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player") and Global.lives > 0:
 		kill_player()
 	if body.is_in_group("Player") and Global.lives == 0:
+		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_packed.bind(game_over).call_deferred()
 		Global.lives = 3
 	if body.is_in_group("Moveable"):

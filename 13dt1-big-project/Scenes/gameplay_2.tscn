@@ -17,7 +17,7 @@ size = Vector3(131.561, 28.8941, 1)
 size = Vector3(119.913, 28.8941, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cq8k4"]
-size = Vector3(35.1737, 2.41455, 19.8372)
+size = Vector3(89.5317, 2.41455, 114.55)
 
 [node name="Node3D" type="Node3D"]
 
@@ -69,7 +69,7 @@ script = ExtResource("4_xq66o")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pausable/DeathZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.94527, 0.6, -3.9855)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11843, 0.6, -24.71)
 shape = SubResource("BoxShape3D_cq8k4")
 
 [node name="Button" parent="Pausable" instance=ExtResource("4_o6p6b")]

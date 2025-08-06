@@ -5,7 +5,9 @@ var speed = 5
 const JUMP_VELOCITY = 4.5
 var menu_pack = preload("res://Scenes/in_game_menu.tscn")
 var pause_is = false
-@onready var raycast = $RayCast3D
+@onready var raycast = $Body/RayCast3D
+var last_direction = Vector3.FORWARD
+var rotation_speed = 10
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -46,15 +48,19 @@ func _physics_process(delta: float) -> void:
 	var input_dir = Input.get_vector("move_left", "move_right", "move_away", "move_toward")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
+		last_direction = direction
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
-
+	
+	$Body.rotation.y = lerp_angle($Body.rotation.y, atan2(-last_direction.x, -last_direction.z), delta * rotation_speed)
+	
+	
 	move_and_slide()
 	
-	var push_force = speed
+	var push_force = 0.25
 	
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
