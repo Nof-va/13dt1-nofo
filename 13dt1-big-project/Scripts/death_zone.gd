@@ -15,9 +15,11 @@ func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player") and Global.lives == 0:
 		get_tree().change_scene_to_packed.bind(game_over).call_deferred()
 		Global.lives = 3
-	print(Global.lives)
 	if body.is_in_group("Moveable"):
-		queue_free()
+		var item = get_parent().get_node("RigidBody3D")
+		item.queue_free()
+		Global.item_check = false
+	
 
 # Puts player to last checkpoint
 func kill_player():

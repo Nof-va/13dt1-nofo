@@ -54,6 +54,15 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
+	var push_force = speed
+	
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider() is RigidBody3D:
+			var moveable = collision.get_collider()
+			var push_direction = -collision.get_normal()
+			moveable.apply_central_impulse(push_direction * push_force)
+	
 	#Camera controller follow player_body position but not on z axis
 	$controller.position.x = lerp($controller.position.x, position.x, 0.05)
 	$controller.position.y = lerp($controller.position.y, position.y, 0.1)

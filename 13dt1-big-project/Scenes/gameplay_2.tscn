@@ -63,6 +63,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10576, 0, -3.26642)
 
 [node name="DeathZone" type="Area3D" parent="Pausable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.520016, -3.88358, 0)
+collision_layer = 33
+collision_mask = 33
 script = ExtResource("4_xq66o")
 metadata/_edit_group_ = true
 
