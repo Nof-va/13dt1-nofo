@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cex1rnecp1ak8"]
+[gd_scene load_steps=11 format=3 uid="uid://cex1rnecp1ak8"]
 
+[ext_resource type="PackedScene" uid="uid://bui0dhhoktgxu" path="res://Scenes/in_game_menu.tscn" id="1_ipc66"]
 [ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/player_body.tscn" id="1_x1mtq"]
 [ext_resource type="PackedScene" uid="uid://rc5fcal65tce" path="res://Scenes/checkpoint.tscn" id="2_n4ay3"]
 [ext_resource type="PackedScene" uid="uid://dk6jsjqogbpjp" path="res://Scenes/item_button.tscn" id="4_o6p6b"]
@@ -21,58 +22,58 @@ size = Vector3(89.5317, 2.41455, 114.55)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Pausable" type="Node3D" parent="."]
+[node name="CanvasLayer" parent="." instance=ExtResource("1_ipc66")]
 
-[node name="Player" parent="Pausable" instance=ExtResource("1_x1mtq")]
+[node name="Player" parent="." instance=ExtResource("1_x1mtq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10576, 2.94682, -3.26642)
 collision_layer = 7
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Pausable"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.536563, 0.25173, -0.805439, 1.12812e-08, 0.95447, 0.298308, 0.84386, -0.160061, 0.512133, -7.45239, 7.95387, 12.1655)
 
-[node name="Platform" type="StaticBody3D" parent="Pausable"]
+[node name="Platform" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.67251)
 collision_layer = 4
 collision_mask = 4
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pausable/Platform"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform"]
 transform = Transform3D(19.3251, 0, 0, 0, 1, 0, 0, 0, 7.2974, 0, 0, 0)
 mesh = SubResource("BoxMesh_wmg1i")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pausable/Platform"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015564, 0, -0.000335693)
 shape = SubResource("BoxShape3D_cdv5c")
 
-[node name="SideWall" type="StaticBody3D" parent="Pausable"]
+[node name="SideWall" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pausable/SideWall"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SideWall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8515, -4.65787, 1.35647)
 shape = SubResource("BoxShape3D_wp4n3")
 
-[node name="SideWall2" type="StaticBody3D" parent="Pausable"]
+[node name="SideWall2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.9481)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pausable/SideWall2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SideWall2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3588, -4.65787, 1.35647)
 shape = SubResource("BoxShape3D_6rvdd")
 
-[node name="Checkpoint" parent="Pausable" instance=ExtResource("2_n4ay3")]
+[node name="Checkpoint" parent="." instance=ExtResource("2_n4ay3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10576, 0, -3.26642)
 
-[node name="DeathZone" type="Area3D" parent="Pausable"]
+[node name="DeathZone" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.520016, -3.88358, 0)
 collision_layer = 33
 collision_mask = 33
 script = ExtResource("4_xq66o")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pausable/DeathZone"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11843, 0.6, -24.71)
 shape = SubResource("BoxShape3D_cq8k4")
 
-[node name="Button" parent="Pausable" instance=ExtResource("4_o6p6b")]
+[node name="Button" parent="." instance=ExtResource("4_o6p6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.05365, 1.33199, -3.94457)
 
-[connection signal="body_entered" from="Pausable/DeathZone" to="Pausable/DeathZone" method="_on_body_entered"]
+[connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_body_entered"]

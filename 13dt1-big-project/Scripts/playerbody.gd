@@ -14,16 +14,6 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	
-	var tree = get_tree()
-	var menu = menu_pack.instantiate()
-
-	if Input.is_action_just_pressed("pause"):
-		if pause_is == false:
-			get_parent().get_parent().add_child(menu)
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			tree.paused = !tree.paused
-			pause_is = true
-	
 	
 	if raycast.is_colliding():
 		pass
