@@ -16,10 +16,6 @@ func _on_body_entered(body: Node3D) -> void:
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_packed.bind(game_over).call_deferred()
 		Global.lives = 3
-	if body.is_in_group("Moveable"):
-		var item = get_parent().get_node("RigidBody3D")
-		item.queue_free()
-		Global.item_check = false
 	
 
 # Puts player to last checkpoint

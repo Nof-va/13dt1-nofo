@@ -5,7 +5,6 @@ var speed = 5
 const JUMP_VELOCITY = 4.5
 var menu_pack = preload("res://Scenes/in_game_menu.tscn")
 var pause_is = false
-@onready var raycast = $Body/RayCast3D
 var last_direction = Vector3.FORWARD
 var rotation_speed = 10
 
@@ -13,10 +12,6 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta: float) -> void:
-	
-	
-	if raycast.is_colliding():
-		pass
 	
 	# Add the gravity.
 	if not is_on_floor():

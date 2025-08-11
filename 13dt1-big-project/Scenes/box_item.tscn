@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dole36dqfpe7d"]
+[gd_scene load_steps=4 format=3 uid="uid://dole36dqfpe7d"]
+
+[ext_resource type="Script" uid="uid://dm642o4m36318" path="res://Scripts/item.gd" id="1_2xy6t"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_37xia"]
 
@@ -8,9 +10,16 @@
 disable_mode = 2
 collision_layer = 46
 collision_mask = 46
+mass = 5.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_37xia")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_2xy6t")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+collision_mask = 32
+collide_with_areas = true
+collide_with_bodies = false
+script = ExtResource("1_2xy6t")

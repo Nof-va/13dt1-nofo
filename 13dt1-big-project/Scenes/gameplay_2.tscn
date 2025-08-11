@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cex1rnecp1ak8"]
+[gd_scene load_steps=12 format=3 uid="uid://cex1rnecp1ak8"]
 
 [ext_resource type="PackedScene" uid="uid://bui0dhhoktgxu" path="res://Scenes/in_game_menu.tscn" id="1_ipc66"]
 [ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/player_body.tscn" id="1_x1mtq"]
@@ -18,7 +18,10 @@ size = Vector3(131.561, 28.8941, 1)
 size = Vector3(119.913, 28.8941, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cq8k4"]
-size = Vector3(89.5317, 2.41455, 114.55)
+size = Vector3(29.1453, 2.41455, 23.7975)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ipc66"]
+size = Vector3(93.2962, 2.41455, 23.7975)
 
 [node name="Node3D" type="Node3D"]
 
@@ -46,6 +49,21 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015564, 0, -0.000335693)
 shape = SubResource("BoxShape3D_cdv5c")
 
+[node name="Platform2" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 9.28816, -9.19953, -2.67251)
+collision_layer = 4
+collision_mask = 4
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform2"]
+transform = Transform3D(19.3251, 0, 0, 0, 1, 0, 0, 0, 7.2974, 0, 0, 0)
+mesh = SubResource("BoxMesh_wmg1i")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015564, 0, -0.000335693)
+shape = SubResource("BoxShape3D_cdv5c")
+
 [node name="SideWall" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SideWall"]
@@ -70,10 +88,22 @@ script = ExtResource("4_xq66o")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11843, 0.6, -24.71)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.25312, 0.6, -5.5432)
 shape = SubResource("BoxShape3D_cq8k4")
+
+[node name="DeathZone2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8919, -20.0039, 0)
+collision_layer = 33
+collision_mask = 33
+script = ExtResource("4_xq66o")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZone2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.8223, 0.6, -5.5432)
+shape = SubResource("BoxShape3D_ipc66")
 
 [node name="Button" parent="." instance=ExtResource("4_o6p6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.05365, 1.33199, -3.94457)
 
 [connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_body_entered"]
+[connection signal="body_entered" from="DeathZone2" to="DeathZone2" method="_on_body_entered"]
