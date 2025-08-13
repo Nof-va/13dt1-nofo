@@ -1,53 +1,15 @@
-[gd_scene load_steps=24 format=3 uid="uid://3t18mjro8ddi"]
+[gd_scene load_steps=11 format=3 uid="uid://3t18mjro8ddi"]
 
 [ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/player_body.tscn" id="1_1bkrg"]
 [ext_resource type="Script" uid="uid://bav040fifgynp" path="res://Scripts/death_zone.gd" id="3_jobk0"]
 [ext_resource type="PackedScene" uid="uid://rc5fcal65tce" path="res://Scenes/checkpoint.tscn" id="4_yb5ha"]
 [ext_resource type="PackedScene" uid="uid://bui0dhhoktgxu" path="res://Scenes/in_game_menu.tscn" id="5_r8bcl"]
 [ext_resource type="PackedScene" uid="uid://cdn2sfrfu2sa4" path="res://Scenes/next_level.tscn" id="5_wxni0"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_l6dbt"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_73yyx"]
-size = Vector3(19.3193, 1, 7.2934)
-
-[sub_resource type="BoxMesh" id="BoxMesh_1iofh"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_3dodp"]
-size = Vector3(5.25154, 1, 7.2934)
-
-[sub_resource type="BoxMesh" id="BoxMesh_5pf2a"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_1tgny"]
-size = Vector3(9.98387, 1, 7.2934)
-
-[sub_resource type="BoxMesh" id="BoxMesh_kktov"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_6dnkk"]
-size = Vector3(9.56688, 1, 7.2934)
-
-[sub_resource type="BoxMesh" id="BoxMesh_yajku"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_70bnq"]
-size = Vector3(2.81786, 15.7483, 7.2934)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_iiuoa"]
-size = Vector3(2.81786, 18.464, 7.2934)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_a541u"]
-size = Vector3(2.81786, 34.9957, 7.2934)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_magkk"]
-size = Vector3(2.81786, 0.983215, 7.2934)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_1pbxc"]
-size = Vector3(27.5808, 2.41455, 19.8372)
+[ext_resource type="PackedScene" uid="uid://cex1rnecp1ak8" path="res://Scenes/gameplay_2.tscn" id="6_1qnfl"]
+[ext_resource type="MeshLibrary" uid="uid://bn8fey2ctvouk" path="res://Assets/world-blocks-v1.tres" id="6_rlidi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r6gl3"]
-size = Vector3(4.34924, 2.41455, 19.8372)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_3g1gx"]
-size = Vector3(91.1378, 2.41455, 19.8372)
+size = Vector3(120.357, 2.41455, 19.8372)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tmhmw"]
 size = Vector3(131.561, 28.8941, 1)
@@ -65,226 +27,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10576, 2.94682, -3.26642)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.536563, 0.25173, -0.805439, 1.12812e-08, 0.95447, 0.298308, 0.84386, -0.160061, 0.512133, -7.45239, 7.95387, 12.1655)
 
-[node name="Platform" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.67251)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform"]
-transform = Transform3D(19.3251, 0, 0, 0, 1, 0, 0, 0, 7.2974, 0, 0, 0)
-mesh = SubResource("BoxMesh_l6dbt")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015564, 0, -0.000335693)
-shape = SubResource("BoxShape3D_73yyx")
-
-[node name="Platform2" type="StaticBody3D" parent="."]
-transform = Transform3D(-0.00820297, 0.999966, 0, -0.999966, -0.00820297, 0, 0, 0, 1, 9.30317, -9.22972, -2.67251)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform2"]
-transform = Transform3D(19.3251, 0, 0, 0, 1, 0, 0, 0, 7.2974, 0, 0, 0)
-mesh = SubResource("BoxMesh_l6dbt")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015564, 0, -0.000335693)
-shape = SubResource("BoxShape3D_73yyx")
-
-[node name="Platform3" type="StaticBody3D" parent="."]
-transform = Transform3D(-0.0283403, 0.999598, 0, -0.999598, -0.0283403, 0, 0, 0, 1, 13.9337, -9.09603, -2.67251)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform3"]
-transform = Transform3D(19.3251, 0, 0, 0, 1, 0, 0, 0, 7.2974, 0, 0, 0)
-mesh = SubResource("BoxMesh_l6dbt")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015564, 0, -0.000335693)
-shape = SubResource("BoxShape3D_73yyx")
-
-[node name="Platform4" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6422, -18.2789, -2.67251)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform4"]
-transform = Transform3D(4.93423, -1.86265e-09, 0, 1.49012e-08, 0.979214, 0, 0, 0, 7.2974, 0, 0, 0)
-mesh = SubResource("BoxMesh_1iofh")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.279612, -2.09808e-05, -0.000335693)
-shape = SubResource("BoxShape3D_3dodp")
-
-[node name="Platform5" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.7101, 0.146729, -2.673)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform5"]
-transform = Transform3D(9.80981, 0, 0, 0, 1, 0, 0, 0, 7.2974, -4.64671, 0, 0)
-mesh = SubResource("BoxMesh_5pf2a")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.66927, 0, -0.000335693)
-shape = SubResource("BoxShape3D_1tgny")
-
-[node name="Platform6" type="StaticBody3D" parent="."]
-transform = Transform3D(0.965935, -0.258785, 0, 0.258785, 0.965935, 0, 0, 0, 1, 35.013, 3.07502, -2.673)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform6"]
-transform = Transform3D(9.2456, 0, 0, -2.38419e-07, 1.13974, 0, 0, 0, 7.2974, -7.04049, -0.0552692, 0)
-mesh = SubResource("BoxMesh_kktov")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1185, 4.76837e-07, -0.000335693)
-shape = SubResource("BoxShape3D_6dnkk")
-
-[node name="Platform7" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.6539, -7.72835, -2.673)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform7"]
-transform = Transform3D(2.76294, 0, 0, 0, 17.658, 0, 0, 0, 7.2974, 0, -1.05781, 0)
-mesh = SubResource("BoxMesh_yajku")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0101051, -0.0211182, -0.000335693)
-shape = SubResource("BoxShape3D_70bnq")
-
-[node name="Platform8" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.162, -9.54136, -2.673)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform8"]
-transform = Transform3D(2.76294, 0, 0, 0, 15.6894, 0, 0, 0, 7.2974, 0, 0, 0)
-mesh = SubResource("BoxMesh_yajku")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0101051, 0, -0.000335693)
-shape = SubResource("BoxShape3D_70bnq")
-
-[node name="Platform9" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.5999, -9.04165, -2.673)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform9"]
-transform = Transform3D(2.76294, 0, 0, 0, 15.6894, 0, 0, 0, 7.2974, 0, 0, 0)
-mesh = SubResource("BoxMesh_yajku")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform9"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0101051, 0, -0.000335693)
-shape = SubResource("BoxShape3D_70bnq")
-
-[node name="Platform10" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.3816, -8.84184, -2.673)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform10"]
-transform = Transform3D(2.76294, 0, 0, 0, 15.6894, 0, 0, 0, 7.2974, 0, 0, 0)
-mesh = SubResource("BoxMesh_yajku")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform10"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0101051, 0, -0.000335693)
-shape = SubResource("BoxShape3D_70bnq")
-
-[node name="Platform11" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.432, -5.88118, -2.673)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform11"]
-transform = Transform3D(2.76294, 0, 0, 0, 18.4922, 0, 0, 0, 7.2974, 0, -1.49809, 0)
-mesh = SubResource("BoxMesh_yajku")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform11"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0101051, -1.35785, -0.000335693)
-shape = SubResource("BoxShape3D_iiuoa")
-
-[node name="Platform14" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.244, -8.614, -2.673)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform14"]
-transform = Transform3D(2.76294, 0, 0, 0, 15.6894, 0, 0, 0, 7.2974, 0, 0, 0)
-mesh = SubResource("BoxMesh_yajku")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform14"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0101051, 0, -0.000335693)
-shape = SubResource("BoxShape3D_70bnq")
-
-[node name="Platform15" type="StaticBody3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 46.2417, -17.8406, -2.673)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform15"]
-transform = Transform3D(2.76294, 0, 0, 0, 34.9207, 0, 0, 0, 7.2974, 0, 0, 0)
-mesh = SubResource("BoxMesh_yajku")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform15"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0101051, 0.0129967, -0.000335693)
-shape = SubResource("BoxShape3D_a541u")
-
-[node name="Platform12" type="StaticBody3D" parent="."]
-transform = Transform3D(0.731794, -0.681526, 0, 0.681526, 0.731794, 0, 0, 0, 1, 62.2081, -0.189922, -2.673)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform12"]
-transform = Transform3D(2.76294, 0, 0, 0, 1, 0, 0, 0, 7.2974, 0, 0, 0)
-mesh = SubResource("BoxMesh_yajku")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform12"]
-transform = Transform3D(1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, -0.0101013, 0.0108299, -0.000335693)
-shape = SubResource("BoxShape3D_magkk")
-
-[node name="Platform13" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.5441, 0.620204, -2.673)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform13"]
-transform = Transform3D(19.3251, 0, 0, 0, 1, 0, 0, 0, 7.2974, 0, 0, 0)
-mesh = SubResource("BoxMesh_l6dbt")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform13"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015564, 0, -0.000335693)
-shape = SubResource("BoxShape3D_73yyx")
-
 [node name="DeathZone" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.520016, -3.88358, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3539, -10.6166, 0)
 script = ExtResource("3_jobk0")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.74172, 0.6, -3.9855)
-shape = SubResource("BoxShape3D_1pbxc")
-
-[node name="DeathZone2" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9143, -12.3695, 0)
-script = ExtResource("3_jobk0")
-metadata/_edit_group_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZone2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.38912, 0.6, -3.9855)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3397, 0.6, -3.9855)
 shape = SubResource("BoxShape3D_r6gl3")
-
-[node name="DeathZone3" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.0933, -6.96277, 0)
-script = ExtResource("3_jobk0")
-metadata/_edit_group_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZone3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.0368, 0.6, -3.9855)
-shape = SubResource("BoxShape3D_3g1gx")
 
 [node name="Checkpoint" parent="." instance=ExtResource("4_yb5ha")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10576, 0, -3.26642)
@@ -296,15 +46,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6815, 0, -3.26642)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.8114, 0.646729, -2.07153)
 
 [node name="SideWall" type="StaticBody3D" parent="."]
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.950737)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SideWall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8515, -4.65787, 1.35647)
 shape = SubResource("BoxShape3D_tmhmw")
 
 [node name="SideWall2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.9481)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.4001)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SideWall2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3588, -4.65787, 1.35647)
@@ -312,7 +61,14 @@ shape = SubResource("BoxShape3D_x23wt")
 
 [node name="NextLevel" parent="." instance=ExtResource("5_wxni0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.5375, 0.921374, -3.02118)
+next_level = ExtResource("6_1qnfl")
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh_library = ExtResource("6_rlidi")
+data = {
+"cells": PackedInt32Array(4, 0, 196608, 4, 65535, 196608, 4, 65534, 196608, 4, 65533, 196608, 3, 65533, 196608, 2, 65533, 196608, 1, 65533, 196608, 0, 65533, 196608, 65535, 65533, 196608, 65534, 65533, 196608, 65533, 65533, 196608, 65532, 65533, 196608, 65531, 65533, 196608, 65530, 65533, 196608, 65529, 65533, 196608, 65529, 65534, 196608, 65528, 65534, 196608, 65528, 65535, 196608, 65528, 0, 196608, 65529, 65535, 196608, 65530, 65535, 196608, 65531, 65535, 196608, 65531, 65534, 196608, 65532, 65534, 196608, 65533, 65534, 196608, 65534, 65534, 196608, 65535, 65535, 196608, 0, 65535, 196608, 1, 65535, 196608, 2, 65535, 196608, 3, 65535, 196608, 3, 65534, 196608, 2, 65534, 196608, 1, 65534, 196608, 0, 65534, 196608, 65535, 65534, 196608, 65530, 65534, 196608, 65532, 65535, 196608, 65533, 65535, 196608, 65534, 65535, 196608, 3, 0, 196608, 2, 0, 196608, 1, 0, 196608, 0, 0, 196608, 65535, 0, 196608, 65534, 0, 196608, 65533, 0, 196608, 65532, 0, 196608, 65531, 0, 196608, 65530, 0, 196608, 65529, 0, 196608, 65528, 65533, 196608, 7, 0, 196608, 7, 65535, 196608, 7, 65534, 196608, 7, 65533, 196608, 8, 65533, 196608, 9, 65533, 196608, 10, 65533, 196608, 11, 65533, 196608, 11, 65534, 196608, 10, 65534, 196608, 9, 65534, 196608, 8, 65534, 196608, 8, 65535, 196608, 9, 65535, 196608, 10, 65535, 196608, 11, 65535, 196608, 11, 0, 196608, 10, 0, 196608, 9, 0, 196608, 8, 0, 196608, 12, 0, 0, 12, 65535, 0, 12, 65534, 0, 12, 65533, 0, 65549, 65533, 2, 65549, 65534, 2, 65549, 65535, 2, 65549, 0, 2, 65550, 65533, 1, 65550, 65534, 1, 65550, 65535, 1, 65550, 0, 1, 65551, 0, 0, 65551, 65535, 0, 65551, 65534, 0, 65551, 65533, 0, -65532, 65535, 0, -65532, 65534, 0, -65532, 65533, 0, -65532, 0, 0, -65529, 0, 0, -65529, 65535, 0, -65529, 65534, 0, -65529, 65533, 0, -131068, 0, 0, -131068, 65535, 0, -131068, 65534, 0, -131068, 65533, 0, -196604, 65533, 0, -196604, 65534, 0, -196604, 65535, 0, -196604, 0, 0, -262140, 0, 0, -262140, 65535, 0, -262140, 65534, 0, -262140, 65533, 0, -327676, 65533, 0, -327676, 65534, 0, -327676, 65535, 0, -327676, 0, 0, -393212, 65533, 0, -393212, 65534, 0, -393212, 65535, 0, -393212, 0, 0, -131065, 0, 0, -196601, 0, 0, -262137, 0, 0, -327673, 0, 0, -393209, 0, 0, -458745, 0, 0, -458746, 0, 0, -458747, 0, 0, -458748, 0, 0, -458745, 65535, 0, -458746, 65535, 0, -458747, 65535, 0, -458748, 65535, 0, -458748, 65534, 0, -458748, 65533, 0, -458747, 65533, 0, -458746, 65533, 0, -458745, 65533, 0, -458745, 65534, 0, -458746, 65534, 0, -458747, 65534, 0, -393209, 65535, 0, -393209, 65534, 0, -393209, 65533, 0, -327673, 65535, 0, -327673, 65534, 0, -327673, 65533, 0, -262137, 65535, 0, -262137, 65534, 0, -262137, 65533, 0, -196601, 65535, 0, -196601, 65534, 0, -196601, 65533, 0, -131065, 65535, 0, -131065, 65534, 0, -131065, 65533, 0, 13, 65533, 589825, 13, 0, 589825, 13, 65535, 589825, 13, 65534, 589825, 15, 65533, 589824, -65521, 65533, 589824, -131057, 65533, 589824, -196593, 65533, 589824, -262129, 65533, 589824, -327665, 65533, 589824, -393201, 65533, 589824, -458737, 65533, 589824, -458736, 65533, 589824, -458735, 65533, 589824, -458734, 65533, 589824, -458733, 65533, 589824, -458732, 65533, 589824, -458731, 65533, 589824, -458730, 65533, 589824, -458729, 65533, 589824, -458728, 65533, 589824, -458727, 65533, 589824, -458727, 65534, 589824, -458726, 65534, 589824, -458725, 65534, 589824, -458724, 65534, 589824, -458726, 65533, 589824, -458725, 65533, 589824, -458723, 65533, 589824, -458722, 65533, 589824, -458721, 65533, 589824, -393185, 65533, 589824, -393188, 65533, 589824, -393191, 65533, 589824, -393194, 65533, 589824, -393197, 65533, 589824, -458724, 65533, 589824, -458728, 65534, 589824, -458729, 65534, 589824, -458730, 65534, 589824, -458731, 65534, 589824, -458732, 65534, 589824, -458733, 65534, 589824, -458733, 65535, 589824, -458734, 65535, 589824, -458735, 65535, 589824, -458736, 65534, 589824, -458735, 65534, 589824, -458734, 65534, 589824, -458736, 65535, 589824, -458737, 65534, 589824, -458737, 65535, 589824, -458737, 0, 589824, -393201, 65534, 589824, -393201, 65535, 589824, -393201, 0, 589824, -327665, 65534, 589824, -327665, 65535, 589824, -327665, 0, 589824, -262129, 0, 589824, -262129, 65535, 589824, -262129, 65534, 589824, -196593, 0, 589824, -196593, 65535, 589824, -196593, 65534, 589824, -131057, 0, 589824, -131057, 65535, 589824, -131057, 65534, 589824, -65521, 0, 589824, -65521, 65535, 589824, -65521, 65534, 589824, 15, 0, 589824, 15, 65535, 589824, 15, 65534, 589824, -458736, 0, 589824, -458735, 0, 589824, -458734, 0, 589824, -458733, 0, 589824, -458732, 0, 589824, -458731, 0, 589824, -458730, 0, 589824, -458729, 0, 589824, -458728, 0, 589824, -458727, 0, 589824, -458726, 0, 589824, -458725, 0, 589824, -458724, 0, 589824, -458723, 0, 589824, -458722, 0, 589824, -458721, 0, 589824, -458721, 65534, 589824, -458721, 65535, 589824, -458722, 65534, 589824, -458723, 65534, 589824, -458732, 65535, 589824, -458731, 65535, 589824, -458730, 65535, 589824, -458729, 65535, 589824, -458728, 65535, 589824, -458727, 65535, 589824, -458726, 65535, 589824, -458725, 65535, 589824, -458724, 65535, 589824, -458723, 65535, 589824, -458722, 65535, 589824, -393188, 65534, 589824, -393188, 65535, 589824, -393188, 0, 589824, -393185, 65534, 589824, -393185, 65535, 589824, -393185, 0, 589824, -393191, 65534, 589824, -393191, 65535, 589824, -393191, 0, 589824, -393194, 65534, 589824, -393194, 65535, 589824, -393194, 0, 589824, -393197, 65534, 589824, -393197, 65535, 589824, -393197, 0, 589824, -327655, 65533, 589824, -327655, 65534, 589824, -327655, 65535, 589824, -327655, 0, 589824, -327652, 65533, 589824, -327652, 65534, 589824, -327652, 65535, 589824, -327652, 0, 589824, -327649, 65533, 589824, -327649, 65534, 589824, -327649, 65535, 589824, -327649, 0, 589824, -327658, 65533, 589824, -327658, 65534, 589824, -327658, 65535, 589824, -327658, 0, 589824, -327661, 65533, 589824, -327661, 65534, 589824, -327661, 65535, 589824, -327661, 0, 589824, -262119, 65533, 589824, -262119, 65534, 589824, -262119, 65535, 589824, -262119, 0, 589824, -262122, 65533, 589824, -262122, 65534, 589824, -262122, 65535, 589824, -262122, 0, 589824, -262125, 65533, 589824, -262125, 65534, 589824, -262125, 65535, 589824, -262125, 0, 589824, -262116, 65533, 589824, -262116, 65534, 589824, -262116, 65535, 589824, -262116, 0, 589824, -262113, 65533, 589824, -262113, 65534, 589824, -262113, 65535, 589824, -262113, 0, 589824, -196577, 65533, 589824, -196577, 65534, 589824, -196577, 65535, 589824, -196577, 0, 589824, -196580, 65533, 589824, -196580, 65534, 589824, -196580, 65535, 589824, -196580, 0, 589824, -196583, 65533, 589824, -196583, 65534, 589824, -196583, 65535, 589824, -196583, 0, 589824, -196586, 65533, 589824, -196586, 65534, 589824, -196586, 65535, 589824, -196586, 0, 589824, -196589, 65533, 589824, -196589, 65534, 589824, -196589, 65535, 589824, -196589, 0, 589824, -131041, 65533, 589824, -131041, 65534, 589824, -131041, 65535, 589824, -131041, 0, 589824, -131044, 65533, 589824, -131044, 65534, 589824, -131044, 65535, 589824, -131044, 0, 589824, -131050, 65533, 589824, -131050, 65534, 589824, -131050, 65535, 589824, -131050, 0, 589824, 34, 65533, 0, 34, 65534, 0, 35, 65534, 0, 36, 65534, 0, 37, 65534, 0, 38, 65534, 0, 39, 65534, 0, 40, 65534, 0, 40, 65533, 0, 39, 65533, 0, 38, 65533, 0, 37, 65533, 0, 36, 65533, 0, 35, 65533, 0, 34, 0, 0, 35, 0, 0, 36, 0, 0, 37, 0, 0, 38, 0, 0, 39, 0, 0, 40, 0, 0, 41, 0, 0, 41, 65535, 0, 40, 65535, 0, 39, 65535, 0, 38, 65535, 0, 37, 65535, 0, 36, 65535, 0, 35, 65535, 0, 34, 65535, 0, 41, 65533, 0, 41, 65534, 0, -131053, 0, 0, -131053, 65535, 0, -131053, 65534, 0, -131053, 65533, 0, -131047, 0, 0, -131047, 65535, 0, -131047, 65534, 0, -131047, 65533, 0, -65508, 0, 2, -65508, 65535, 2, -65508, 65534, 2, -65508, 65533, 2, -65514, 0, 2, -65514, 65535, 2, -65514, 65534, 2, -65514, 65533, 2, -65511, 0, 2, -65511, 65535, 2, -65511, 65534, 2, -65511, 65533, 2, -65517, 0, 2, -65517, 65535, 2, -65517, 65534, 2, -65517, 65533, 2, -65505, 65533, 1, -65505, 65534, 1, -65505, 65535, 1, -65505, 0, 1, 32, 65533, 2, 32, 65534, 2, 32, 65535, 2, 32, 0, 2, 33, 65533, 1, 33, 65534, 1, 33, 65535, 1, 33, 0, 1, -65504, 65534, 589825, -65504, 65533, 589825, -65504, 65535, 589825, -65504, 0, 589825)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
 
 [connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_body_entered"]
-[connection signal="body_entered" from="DeathZone2" to="DeathZone2" method="_on_body_entered"]
-[connection signal="body_entered" from="DeathZone3" to="DeathZone3" method="_on_body_entered"]

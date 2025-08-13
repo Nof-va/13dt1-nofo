@@ -1,4 +1,4 @@
-extends CollisionShape3D
+extends RayCast3D
 
 @onready var raycast = $"."
 @onready var item = $".."

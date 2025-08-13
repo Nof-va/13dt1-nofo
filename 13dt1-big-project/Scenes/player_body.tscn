@@ -25,15 +25,21 @@ collision_layer = 15
 collision_mask = 15
 script = ExtResource("1_qyis3")
 something = NodePath("Control")
+speed = 5
+push_force = 1
+rotation_speed = 10
+xcamera_speed = 1
+ycamera_speed = 2
 
 [node name="Body" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_1m5js")
 
-[node name="RayCast3D" type="RayCast3D" parent="Body"]
+[node name="RayCast3D" type="RayCast3D" parent="Body" node_paths=PackedStringArray("raycast")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 target_position = Vector3(2, 0, 0)
 collision_mask = 8
 script = ExtResource("2_jv7n1")
+raycast = NodePath(".")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Body"]
 mesh = SubResource("BoxMesh_dd1i8")

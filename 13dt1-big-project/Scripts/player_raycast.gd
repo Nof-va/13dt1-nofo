@@ -1,8 +1,9 @@
 extends RayCast3D
 
-@onready var raycast = $"."
-var item: RigidBody3D
+@export var raycast : Node
+var item : RigidBody3D
 var old_parent
+
 
 func _physics_process(delta: float) -> void:
 	if raycast.is_colliding():
