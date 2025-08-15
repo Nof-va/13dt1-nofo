@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cipcdlo5g502a"
-path="res://.godot/imported/world-blocks-v1.glb-6e23f61101317b02f7c1bae056cdd79e.scn"
+uid="uid://dx7mg3bxchpyn"
+path="res://.godot/imported/world-blocks.glb-1d5821838a34d503ef8205c41f9a8b1f.scn"
 
 [deps]
 
-source_file="res://Assets/world-blocks-v1.glb"
-dest_files=["res://.godot/imported/world-blocks-v1.glb-6e23f61101317b02f7c1bae056cdd79e.scn"]
+source_file="res://Assets/Textures/world-blocks.glb"
+dest_files=["res://.godot/imported/world-blocks.glb-1d5821838a34d503ef8205c41f9a8b1f.scn"]
 
 [params]
 

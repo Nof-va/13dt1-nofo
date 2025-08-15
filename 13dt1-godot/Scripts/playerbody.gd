@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var something : Node
+@export var hud_hearts : Node
 @export var speed : int
 @export var push_force : int
 @export var rotation_speed : int

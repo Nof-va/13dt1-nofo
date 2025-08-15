@@ -18,8 +18,8 @@ func _on_body_entered(body: Node3D) -> void:
 		Global.lives = 3
 	
 
-# Puts player to last checkpoint
+# Puts player to last checkpoint and updates lives
 func kill_player():
 	player.position = Global.spawn_point
-	player.something.remove_life()
+	player.hud_hearts.remove_life()
 	

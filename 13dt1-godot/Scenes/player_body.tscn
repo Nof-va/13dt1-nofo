@@ -20,11 +20,11 @@ no_depth_test = true
 shading_mode = 0
 albedo_color = Color(0, 0.812099, 0.824048, 1)
 
-[node name="Node3D" type="CharacterBody3D" node_paths=PackedStringArray("something") groups=["Player"]]
+[node name="Node3D" type="CharacterBody3D" node_paths=PackedStringArray("hud_hearts") groups=["Player"]]
 collision_layer = 15
 collision_mask = 15
 script = ExtResource("1_qyis3")
-something = NodePath("Control")
+hud_hearts = NodePath("Control")
 speed = 5
 push_force = 1
 rotation_speed = 10

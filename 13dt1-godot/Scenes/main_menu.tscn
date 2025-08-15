@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ytmbd0mmgf1v" path="res://Scenes/main_menu_background.tscn" id="1_2cdya"]
 [ext_resource type="Script" uid="uid://dvj1gp3c7m7hh" path="res://Scripts/main_menu.gd" id="1_tf75a"]
-[ext_resource type="FontFile" uid="uid://btb3f2dkr6xkn" path="res://Fonts/Baby Doll.ttf" id="2_0x5qc"]
+[ext_resource type="FontFile" uid="uid://btb3f2dkr6xkn" path="res://Assets/Fonts/Baby Doll.ttf" id="2_0x5qc"]
 
 [sub_resource type="Environment" id="Environment_y6j1k"]
 background_mode = 1
