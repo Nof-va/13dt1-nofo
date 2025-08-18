@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://beng7naqslpfg"
-path="res://.godot/imported/Baby Doll.otf-14baa31f798ad40e37b97f54aaffff16.fontdata"
+uid="uid://btb3f2dkr6xkn"
+path="res://.godot/imported/Baby Doll.ttf-ce001dcf09dd5bccee574958c119be3f.fontdata"
 
 [deps]
 
-source_file="res://Fonts/Baby Doll.otf"
-dest_files=["res://.godot/imported/Baby Doll.otf-14baa31f798ad40e37b97f54aaffff16.fontdata"]
+source_file="res://Assets/Fonts/Baby Doll.ttf"
+dest_files=["res://.godot/imported/Baby Doll.ttf-ce001dcf09dd5bccee574958c119be3f.fontdata"]
 
 [params]
 

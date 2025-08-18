@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bui0dhhoktgxu"]
 
-[ext_resource type="FontFile" uid="uid://btb3f2dkr6xkn" path="res://Fonts/Baby Doll.ttf" id="1_2rnyg"]
+[ext_resource type="FontFile" uid="uid://btb3f2dkr6xkn" path="res://Assets/Fonts/Baby Doll.ttf" id="1_2rnyg"]
 [ext_resource type="Script" uid="uid://chawje4lj461o" path="res://Scripts/in_game_menu.gd" id="2_2rnyg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ucpqp"]

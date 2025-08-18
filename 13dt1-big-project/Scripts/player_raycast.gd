@@ -4,7 +4,7 @@ extends RayCast3D
 var item: RigidBody3D
 var old_parent
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if raycast.is_colliding():
 		item = get_collider()
 		old_parent = item.get_parent()

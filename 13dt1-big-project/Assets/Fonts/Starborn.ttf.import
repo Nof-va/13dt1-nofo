@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://b16mc6uhavrrv"
-path="res://.godot/imported/Starborn.ttf-eb699c6b1a6629ef27e73e1ea8447672.fontdata"
+path="res://.godot/imported/Starborn.ttf-74b111b5ddca8a1c0c7c3d7cf5069d68.fontdata"
 
 [deps]
 
-source_file="res://Fonts/Starborn.ttf"
-dest_files=["res://.godot/imported/Starborn.ttf-eb699c6b1a6629ef27e73e1ea8447672.fontdata"]
+source_file="res://Assets/Fonts/Starborn.ttf"
+dest_files=["res://.godot/imported/Starborn.ttf-74b111b5ddca8a1c0c7c3d7cf5069d68.fontdata"]
 
 [params]
 

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://btb3f2dkr6xkn"
-path="res://.godot/imported/Baby Doll.ttf-e1dfda6b5c052bbfc559851244c92d5b.fontdata"
+uid="uid://3d3c6soqg1mc"
+path="res://.godot/imported/Starborn.otf-b1cb4d85bf54769d11f77fecf0725b8e.fontdata"
 
 [deps]
 
-source_file="res://Fonts/Baby Doll.ttf"
-dest_files=["res://.godot/imported/Baby Doll.ttf-e1dfda6b5c052bbfc559851244c92d5b.fontdata"]
+source_file="res://Assets/Fonts/Starborn.otf"
+dest_files=["res://.godot/imported/Starborn.otf-b1cb4d85bf54769d11f77fecf0725b8e.fontdata"]
 
 [params]
 
