@@ -20,20 +20,21 @@ no_depth_test = true
 shading_mode = 0
 albedo_color = Color(0, 0.812099, 0.824048, 1)
 
-[node name="Node3D" type="CharacterBody3D" node_paths=PackedStringArray("something") groups=["Player"]]
+[node name="Node3D" type="CharacterBody3D" node_paths=PackedStringArray("hearts") groups=["Player"]]
 collision_layer = 15
 collision_mask = 15
 script = ExtResource("1_qyis3")
-something = NodePath("Control")
+hearts = NodePath("Control")
 
 [node name="Body" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_1m5js")
 
-[node name="RayCast3D" type="RayCast3D" parent="Body"]
+[node name="RayCast3D" type="RayCast3D" parent="Body" node_paths=PackedStringArray("player")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 target_position = Vector3(2, 0, 0)
 collision_mask = 8
 script = ExtResource("2_jv7n1")
+player = NodePath("../..")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Body"]
 mesh = SubResource("BoxMesh_dd1i8")

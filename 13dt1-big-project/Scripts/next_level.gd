@@ -1,6 +1,6 @@
 extends Area3D
 
-var next_level = preload("res://Scenes/gameplay_2.tscn")
+@export var next_level : PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

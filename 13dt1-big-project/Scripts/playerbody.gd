@@ -1,8 +1,9 @@
 extends CharacterBody3D
 
-@export var something: Node
-var speed = 5
+@export var hearts : Node
 const JUMP_VELOCITY = 4.5
+@export var push_force = 2.5
+var speed = 5
 var menu_pack = preload("res://Scenes/in_game_menu.tscn")
 var pause_is = false
 var last_direction = Vector3.FORWARD
@@ -13,23 +14,16 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	
-	# Add the gravity.
+	# gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		speed = 5
 	
-	if Input.is_action_just_pressed("run") and is_on_floor():
-		speed += 5
-	
-	if Input.is_action_just_released("run"):
-		speed -= 5
-
-	# Handle jump.
+	# jump
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("move_left", "move_right", "move_away", "move_toward")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
@@ -40,12 +34,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
 	
+	# rotate player mesh smoothly towards current facing direction
 	$Body.rotation.y = lerp_angle($Body.rotation.y, atan2(-last_direction.x, -last_direction.z), delta * rotation_speed)
 	
-	
 	move_and_slide()
-	
-	var push_force = 0.25
 	
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
@@ -53,6 +45,7 @@ func _physics_process(delta: float) -> void:
 			var moveable = collision.get_collider()
 			var push_direction = -collision.get_normal()
 			moveable.apply_central_impulse(push_direction * push_force)
+	
 	
 	#Camera controller follow player_body position but not on z axis
 	$controller.position.x = lerp($controller.position.x, position.x, 0.05)

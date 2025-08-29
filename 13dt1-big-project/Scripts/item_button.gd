@@ -1,16 +1,14 @@
 extends Area3D
 
+@export var item : PackedScene
 var player
 var player_check = false
-var item = preload("res://Scenes/box_item.tscn")
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	player = get_parent().get_node("Player")
 
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
 	var this_item = item.instantiate()
