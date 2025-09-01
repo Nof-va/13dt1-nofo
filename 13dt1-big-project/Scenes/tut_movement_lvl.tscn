@@ -1,27 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://3t18mjro8ddi"]
+[gd_scene load_steps=9 format=3 uid="uid://3t18mjro8ddi"]
 
-[ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/player_body.tscn" id="1_1bkrg"]
-[ext_resource type="Script" uid="uid://bav040fifgynp" path="res://Scripts/death_zone.gd" id="3_jobk0"]
-[ext_resource type="PackedScene" uid="uid://rc5fcal65tce" path="res://Scenes/checkpoint.tscn" id="4_yb5ha"]
-[ext_resource type="PackedScene" uid="uid://bui0dhhoktgxu" path="res://Scenes/in_game_menu.tscn" id="5_r8bcl"]
-[ext_resource type="PackedScene" uid="uid://cdn2sfrfu2sa4" path="res://Scenes/next_level.tscn" id="5_wxni0"]
-[ext_resource type="PackedScene" uid="uid://cex1rnecp1ak8" path="res://Scenes/gameplay_2.tscn" id="6_1qnfl"]
-[ext_resource type="MeshLibrary" uid="uid://b6flnivibl80i" path="res://Assets/Textures/world_blocks_v1.tres" id="6_rlidi"]
+[ext_resource type="PackedScene" uid="uid://bui0dhhoktgxu" path="res://Scenes/in_game_menu.tscn" id="1_6dxbm"]
+[ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/player_body.tscn" id="2_k6ya5"]
+[ext_resource type="Script" uid="uid://bav040fifgynp" path="res://Scripts/death_zone.gd" id="3_aogwj"]
+[ext_resource type="PackedScene" uid="uid://rc5fcal65tce" path="res://Scenes/checkpoint.tscn" id="4_7fyo6"]
+[ext_resource type="PackedScene" uid="uid://cdn2sfrfu2sa4" path="res://Scenes/next_level.tscn" id="5_gtj7w"]
+[ext_resource type="PackedScene" uid="uid://cvapqm7tiia0b" path="res://Scenes/tut_key_lvl.tscn" id="6_6dxbm"]
+[ext_resource type="MeshLibrary" uid="uid://b6flnivibl80i" path="res://Assets/Textures/world_blocks_v1.tres" id="7_bjpja"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r6gl3"]
 size = Vector3(132.359, 2.41455, 19.8372)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tmhmw"]
-size = Vector3(131.561, 28.8941, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_x23wt"]
-size = Vector3(119.913, 28.8941, 1)
-
 [node name="Node3D" type="Node3D"]
 
-[node name="CanvasLayer" parent="." instance=ExtResource("5_r8bcl")]
+[node name="CanvasLayer" parent="." instance=ExtResource("1_6dxbm")]
 
-[node name="Player" parent="." instance=ExtResource("1_1bkrg")]
+[node name="Player" parent="." instance=ExtResource("2_k6ya5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10576, 2.94682, -3.26642)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -29,43 +23,28 @@ transform = Transform3D(0.536563, 0.25173, -0.805439, 1.12812e-08, 0.95447, 0.29
 
 [node name="DeathZone" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9143, -12.3695, 0)
-script = ExtResource("3_jobk0")
+script = ExtResource("3_aogwj")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7779, 0.6, -3.9855)
 shape = SubResource("BoxShape3D_r6gl3")
 
-[node name="Checkpoint" parent="." instance=ExtResource("4_yb5ha")]
+[node name="Checkpoint" parent="." instance=ExtResource("4_7fyo6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10576, 0, -3.26642)
 
-[node name="Checkpoint2" parent="." instance=ExtResource("4_yb5ha")]
+[node name="Checkpoint2" parent="." instance=ExtResource("4_7fyo6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6815, 0, -3.26642)
 
-[node name="Checkpoint3" parent="." instance=ExtResource("4_yb5ha")]
+[node name="Checkpoint3" parent="." instance=ExtResource("4_7fyo6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.8114, 0.646729, -2.07153)
 
-[node name="SideWall" type="StaticBody3D" parent="."]
-visible = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SideWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8515, -4.65787, 1.35647)
-shape = SubResource("BoxShape3D_tmhmw")
-
-[node name="SideWall2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.9481)
-visible = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SideWall2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3588, -4.65787, 1.35647)
-shape = SubResource("BoxShape3D_x23wt")
-
-[node name="NextLevel" parent="." instance=ExtResource("5_wxni0")]
+[node name="NextLevel" parent="." instance=ExtResource("5_gtj7w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.5375, 0.921374, -3.02118)
-next_level = ExtResource("6_1qnfl")
+next_level = ExtResource("6_6dxbm")
 
 [node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("6_rlidi")
+mesh_library = ExtResource("7_bjpja")
 collision_layer = 5
 collision_mask = 5
 data = {

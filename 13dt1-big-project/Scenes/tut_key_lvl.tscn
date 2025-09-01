@@ -1,0 +1,68 @@
+[gd_scene load_steps=12 format=3 uid="uid://cvapqm7tiia0b"]
+
+[ext_resource type="PackedScene" uid="uid://bui0dhhoktgxu" path="res://Scenes/in_game_menu.tscn" id="1_8ygso"]
+[ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/player_body.tscn" id="2_g8if2"]
+[ext_resource type="PackedScene" uid="uid://rc5fcal65tce" path="res://Scenes/checkpoint.tscn" id="3_jvs3p"]
+[ext_resource type="Script" uid="uid://bav040fifgynp" path="res://Scripts/death_zone.gd" id="4_7jewi"]
+[ext_resource type="PackedScene" uid="uid://dk6jsjqogbpjp" path="res://Scenes/item_button.tscn" id="5_5v2v3"]
+[ext_resource type="PackedScene" uid="uid://dole36dqfpe7d" path="res://Scenes/box_item.tscn" id="6_qs78a"]
+[ext_resource type="MeshLibrary" uid="uid://b6flnivibl80i" path="res://Assets/Textures/world_blocks_v1.tres" id="7_d1jd8"]
+[ext_resource type="PackedScene" uid="uid://cdn2sfrfu2sa4" path="res://Scenes/next_level.tscn" id="8_g8if2"]
+[ext_resource type="PackedScene" uid="uid://cex1rnecp1ak8" path="res://Scenes/key_lvl.tscn" id="9_jvs3p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wp4n3"]
+size = Vector3(131.561, 28.8941, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ipc66"]
+size = Vector3(142.113, 2.41455, 68.9206)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("1_8ygso")]
+
+[node name="Player" parent="." instance=ExtResource("2_g8if2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10576, 2.94682, -3.26642)
+collision_layer = 7
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.536563, 0.25173, -0.805439, 1.12812e-08, 0.95447, 0.298308, 0.84386, -0.160061, 0.512133, -7.45239, 7.95387, 12.1655)
+
+[node name="SideWall" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.07012)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SideWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8515, -4.65787, 1.35647)
+shape = SubResource("BoxShape3D_wp4n3")
+
+[node name="Checkpoint" parent="." instance=ExtResource("3_jvs3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10576, 0, -3.26642)
+
+[node name="DeathZone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8919, -20.0039, 0)
+collision_layer = 33
+collision_mask = 33
+script = ExtResource("4_7jewi")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41393, 0.6, -5.76325)
+shape = SubResource("BoxShape3D_ipc66")
+
+[node name="Button" parent="." instance=ExtResource("5_5v2v3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.05365, 0.793841, -3.94457)
+item = ExtResource("6_qs78a")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("7_d1jd8")
+collision_layer = 5
+collision_mask = 5
+data = {
+"cells": PackedInt32Array(-5, 65532, 1441792, -5, 65533, 1441792, -5, 65534, 1441792, -5, 65535, 1441792, -4, 65532, 1441792, -4, 65533, 1441792, -4, 65534, 1441792, -4, 65535, 1441792, -3, 65532, 1441792, -3, 65533, 1441792, -3, 65534, 1441792, -3, 65535, 1441792, -2, 65532, 1441792, -2, 65533, 1441792, -2, 65534, 1441792, -2, 65535, 1441792, -1, 65532, 1441792, -1, 65533, 1441792, -1, 65534, 1441792, -1, 65535, 1441792, -65536, 65532, 1441792, -65536, 65533, 1441792, -65536, 65534, 1441792, -65536, 65535, 1441792, -65535, 65532, 1441792, -65535, 65533, 1441792, -65535, 65534, 1441792, -65535, 65535, 1441792, -65534, 65532, 1441792, -65534, 65533, 1441792, -65534, 65534, 1441792, -65534, 65535, 1441792, -65533, 65532, 1441792, -65533, 65533, 1441792, -65533, 65534, 1441792, -65533, 65535, 1441792, -65532, 65532, 1441792, -65532, 65533, 1441792, -65532, 65534, 1441792, -65532, 65535, 1441792, -65531, 65532, 1441792, -65531, 65533, 1441792, -65531, 65534, 1441792, -65531, 65535, 1441792, -65530, 65532, 1376256, -65530, 65533, 1376256, -65530, 65534, 1376256, -65530, 65535, 1376256, -65529, 65532, 1376256, -65529, 65533, 1376256, -65529, 65534, 1376256, -65529, 65535, 1376256, -65528, 65532, 720896, -65528, 65533, 720896, -65528, 65534, 720896, -65528, 65535, 720896, -65527, 65532, 720896, -65527, 65533, 720896, -65527, 65534, 720896, -65527, 65535, 720896, -65526, 65532, 720896, -65526, 65533, 720896, -65526, 65534, 720896, -65526, 65535, 720896, -65525, 65532, 720896, -65525, 65533, 720896, -65525, 65534, 720896, -65525, 65535, 720896, -65524, 65532, 720896, -65524, 65533, 720896, -65524, 65534, 720896, -65524, 65535, 720896, -65523, 65532, 720896, -65523, 65533, 720896, -65523, 65534, 720896, -65523, 65535, 720896)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="Area3D" parent="." instance=ExtResource("8_g8if2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.3781, 0.713739, -3.99025)
+next_level = ExtResource("9_jvs3p")
+
+[connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_body_entered"]

@@ -50,4 +50,5 @@ func _physics_process(delta: float) -> void:
 	#Camera controller follow player_body position but not on z axis
 	$controller.position.x = lerp($controller.position.x, position.x, 0.05)
 	$controller.position.y = lerp($controller.position.y, position.y, 0.1)
+	$controller.position.z = lerp($controller.position.z, position.z, 0.1)
 	

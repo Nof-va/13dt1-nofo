@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://rs6de330fq8m"]
+[gd_scene load_steps=13 format=3 uid="uid://rs6de330fq8m"]
 
 [ext_resource type="PackedScene" uid="uid://ytmbd0mmgf1v" path="res://Scenes/main_menu_background.tscn" id="1_2cdya"]
 [ext_resource type="Script" uid="uid://dvj1gp3c7m7hh" path="res://Scripts/main_menu.gd" id="1_tf75a"]
 [ext_resource type="FontFile" uid="uid://btb3f2dkr6xkn" path="res://Assets/Fonts/Baby Doll.ttf" id="2_0x5qc"]
+[ext_resource type="PackedScene" uid="uid://3t18mjro8ddi" path="res://Scenes/tut_movement_lvl.tscn" id="2_ce3w2"]
+[ext_resource type="PackedScene" uid="uid://cex1rnecp1ak8" path="res://Scenes/key_lvl.tscn" id="3_n45e2"]
 
 [sub_resource type="Environment" id="Environment_y6j1k"]
 background_mode = 1
@@ -23,6 +25,8 @@ background_energy_multiplier = 1.2
 
 [node name="Menu" type="CanvasLayer"]
 script = ExtResource("1_tf75a")
+play = ExtResource("2_ce3w2")
+settings = ExtResource("3_n45e2")
 
 [node name="Background" type="Node3D" parent="."]
 
