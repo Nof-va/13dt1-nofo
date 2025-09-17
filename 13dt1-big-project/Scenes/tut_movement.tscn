@@ -1,12 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://3t18mjro8ddi"]
 
-[ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/player_body.tscn" id="1_1bkrg"]
-[ext_resource type="Script" uid="uid://bav040fifgynp" path="res://Scripts/death_zone.gd" id="3_jobk0"]
-[ext_resource type="PackedScene" uid="uid://rc5fcal65tce" path="res://Scenes/checkpoint.tscn" id="4_yb5ha"]
-[ext_resource type="PackedScene" uid="uid://bui0dhhoktgxu" path="res://Scenes/in_game_menu.tscn" id="5_r8bcl"]
-[ext_resource type="PackedScene" uid="uid://cdn2sfrfu2sa4" path="res://Scenes/next_level.tscn" id="5_wxni0"]
-[ext_resource type="PackedScene" uid="uid://cex1rnecp1ak8" path="res://Scenes/gameplay_2.tscn" id="6_1qnfl"]
-[ext_resource type="MeshLibrary" uid="uid://b6flnivibl80i" path="res://Assets/Textures/world_blocks_v1.tres" id="6_rlidi"]
+[ext_resource type="PackedScene" uid="uid://bui0dhhoktgxu" path="res://Scenes/in_game_menu.tscn" id="1_uhbx2"]
+[ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/player_body.tscn" id="2_ogaki"]
+[ext_resource type="Script" uid="uid://bav040fifgynp" path="res://Scripts/death_zone.gd" id="3_bxp6j"]
+[ext_resource type="PackedScene" uid="uid://rc5fcal65tce" path="res://Scenes/checkpoint.tscn" id="4_ibsu3"]
+[ext_resource type="PackedScene" uid="uid://cdn2sfrfu2sa4" path="res://Scenes/next_level.tscn" id="5_iy6sp"]
+[ext_resource type="MeshLibrary" uid="uid://b6flnivibl80i" path="res://Assets/Textures/world_blocks_v1.tres" id="6_8u3ph"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r6gl3"]
 size = Vector3(132.359, 2.41455, 19.8372)
@@ -17,11 +16,14 @@ size = Vector3(131.561, 28.8941, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_x23wt"]
 size = Vector3(119.913, 28.8941, 1)
 
+[sub_resource type="Resource" id="Resource_qb2jq"]
+metadata/__load_path__ = "res://Scenes/key_lvl.tscn"
+
 [node name="Node3D" type="Node3D"]
 
-[node name="CanvasLayer" parent="." instance=ExtResource("5_r8bcl")]
+[node name="CanvasLayer" parent="." instance=ExtResource("1_uhbx2")]
 
-[node name="Player" parent="." instance=ExtResource("1_1bkrg")]
+[node name="Player" parent="." instance=ExtResource("2_ogaki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10576, 2.94682, -3.26642)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -29,20 +31,20 @@ transform = Transform3D(0.536563, 0.25173, -0.805439, 1.12812e-08, 0.95447, 0.29
 
 [node name="DeathZone" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9143, -12.3695, 0)
-script = ExtResource("3_jobk0")
+script = ExtResource("3_bxp6j")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7779, 0.6, -3.9855)
 shape = SubResource("BoxShape3D_r6gl3")
 
-[node name="Checkpoint" parent="." instance=ExtResource("4_yb5ha")]
+[node name="Checkpoint" parent="." instance=ExtResource("4_ibsu3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10576, 0, -3.26642)
 
-[node name="Checkpoint2" parent="." instance=ExtResource("4_yb5ha")]
+[node name="Checkpoint2" parent="." instance=ExtResource("4_ibsu3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6815, 0, -3.26642)
 
-[node name="Checkpoint3" parent="." instance=ExtResource("4_yb5ha")]
+[node name="Checkpoint3" parent="." instance=ExtResource("4_ibsu3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.8114, 0.646729, -2.07153)
 
 [node name="SideWall" type="StaticBody3D" parent="."]
@@ -60,12 +62,12 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3588, -4.65787, 1.35647)
 shape = SubResource("BoxShape3D_x23wt")
 
-[node name="NextLevel" parent="." instance=ExtResource("5_wxni0")]
+[node name="NextLevel" parent="." instance=ExtResource("5_iy6sp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.5375, 0.921374, -3.02118)
-next_level = ExtResource("6_1qnfl")
+next_level = SubResource("Resource_qb2jq")
 
 [node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("6_rlidi")
+mesh_library = ExtResource("6_8u3ph")
 collision_layer = 5
 collision_mask = 5
 data = {

@@ -1,18 +1,15 @@
 extends Area3D
 
-#var checkpoint_manager
+@export var checkpoint_animator : AnimationPlayer
+@export var respawn_point : Marker3D
 
-# Called when the node enters the scene tree for the first time.
-#func _ready() -> void:
-	#checkpoint_manager = get_parent().get_parent().get_node("CheckpointManager")
-	# Used previously when there was a checkpoint manager node but global var was more efficient
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
-		Global.spawn_point = $Respawn.global_position
-		$Node3D/MeshInstance3D/AnimationPlayer.play("checkpoint_reached")
+		Global.spawn_point = respawn_point.global_position
+		await get_tree().create_timer(0.3).timeout
+		checkpoint_animator.play("checkpoint_reached")

@@ -72,8 +72,10 @@ _data = {
 &"checkpoint_reached": SubResource("Animation_ujtob")
 }
 
-[node name="Area3D" type="Area3D"]
+[node name="Area3D" type="Area3D" node_paths=PackedStringArray("checkpoint_animator", "respawn_point")]
 script = ExtResource("1_q73d6")
+checkpoint_animator = NodePath("Node3D/MeshInstance3D/AnimationPlayer")
+respawn_point = NodePath("Respawn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.31696, 0.321478)
