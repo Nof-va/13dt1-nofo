@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://qyvxj6m7bb1f"]
+[gd_scene load_steps=7 format=3 uid="uid://qyvxj6m7bb1f"]
 
 [ext_resource type="Script" uid="uid://bp12s3pw0xiyh" path="res://Scripts/playerbody.gd" id="1_qyis3"]
-[ext_resource type="Script" uid="uid://c44f01yx354vm" path="res://Scripts/player_raycast.gd" id="2_jv7n1"]
 [ext_resource type="PackedScene" uid="uid://bow0b6gfwhjcm" path="res://Scenes/hearts.tscn" id="2_rg6xc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1m5js"]
@@ -29,12 +28,10 @@ hearts = NodePath("Control")
 [node name="Body" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_1m5js")
 
-[node name="RayCast3D" type="RayCast3D" parent="Body" node_paths=PackedStringArray("player")]
+[node name="RayCast3D" type="RayCast3D" parent="Body"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 target_position = Vector3(2, 0, 0)
 collision_mask = 8
-script = ExtResource("2_jv7n1")
-player = NodePath("../..")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Body"]
 mesh = SubResource("BoxMesh_dd1i8")

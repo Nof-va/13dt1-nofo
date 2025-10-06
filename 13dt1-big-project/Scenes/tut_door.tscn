@@ -72,8 +72,8 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
-[node name="Area3D" parent="." instance=ExtResource("8_4ter2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1877, 0.483015, -3.99761)
+[node name="Door" parent="." instance=ExtResource("8_4ter2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1877, -0.092747, -3.99761)
 
 [node name="Area3D2" parent="." instance=ExtResource("9_vyrct")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.6686, 4.62438, -3.97205)
