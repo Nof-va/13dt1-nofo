@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cex1rnecp1ak8"]
+[gd_scene load_steps=13 format=3 uid="uid://cex1rnecp1ak8"]
 
 [ext_resource type="PackedScene" uid="uid://bui0dhhoktgxu" path="res://Scenes/in_game_menu.tscn" id="1_lxshd"]
 [ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/player_body.tscn" id="2_4ter2"]
@@ -10,12 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bsox5fhocy8mq" path="res://Scenes/door.tscn" id="8_4ter2"]
 [ext_resource type="PackedScene" uid="uid://cdn2sfrfu2sa4" path="res://Scenes/next_level.tscn" id="9_vyrct"]
 [ext_resource type="PackedScene" uid="uid://dmqy4al8lne3h" path="res://Scenes/tut_movingplatforms_lvl.tscn" id="10_xsijp"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_wp4n3"]
-size = Vector3(131.561, 28.8941, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_6rvdd"]
-size = Vector3(119.913, 28.8941, 1)
+[ext_resource type="PackedScene" uid="uid://ccys57t3mxxhi" path="res://Scenes/unlock_door_plate.tscn" id="11_w38fn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ipc66"]
 size = Vector3(142.113, 2.41455, 68.9206)
@@ -30,20 +25,6 @@ collision_layer = 7
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.536563, 0.25173, -0.805439, 1.12812e-08, 0.95447, 0.298308, 0.84386, -0.160061, 0.512133, -7.45239, 7.95387, 12.1655)
-
-[node name="SideWall" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.07012)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SideWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8515, -4.65787, 1.35647)
-shape = SubResource("BoxShape3D_wp4n3")
-
-[node name="SideWall2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.1636)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SideWall2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3588, -4.65787, 1.35647)
-shape = SubResource("BoxShape3D_6rvdd")
 
 [node name="Checkpoint" parent="." instance=ExtResource("3_vyrct")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10576, 0, -3.26642)
@@ -73,10 +54,14 @@ data = {
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
 [node name="Door" parent="." instance=ExtResource("8_4ter2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1877, -0.092747, -3.99761)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1877, 3.4127, -3.99761)
 
 [node name="Area3D2" parent="." instance=ExtResource("9_vyrct")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.6686, 4.62438, -3.97205)
 next_level = ExtResource("10_xsijp")
+
+[node name="StaticBody3D2" parent="." node_paths=PackedStringArray("door") instance=ExtResource("11_w38fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.20445, -0.111612, -4.11367)
+door = NodePath("../Door")
 
 [connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_body_entered"]

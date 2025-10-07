@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://3t18mjro8ddi"]
+[gd_scene load_steps=9 format=3 uid="uid://3t18mjro8ddi"]
 
 [ext_resource type="PackedScene" uid="uid://bui0dhhoktgxu" path="res://Scenes/in_game_menu.tscn" id="1_uhbx2"]
 [ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/player_body.tscn" id="2_ogaki"]
@@ -9,12 +9,6 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r6gl3"]
 size = Vector3(132.359, 2.41455, 19.8372)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_tmhmw"]
-size = Vector3(131.561, 28.8941, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_x23wt"]
-size = Vector3(119.913, 28.8941, 1)
 
 [sub_resource type="Resource" id="Resource_qb2jq"]
 metadata/__load_path__ = "res://Scenes/key_lvl.tscn"
@@ -46,21 +40,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6815, 0, -3.26642)
 
 [node name="Checkpoint3" parent="." instance=ExtResource("4_ibsu3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.8114, 0.646729, -2.07153)
-
-[node name="SideWall" type="StaticBody3D" parent="."]
-visible = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SideWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8515, -4.65787, 1.35647)
-shape = SubResource("BoxShape3D_tmhmw")
-
-[node name="SideWall2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.9481)
-visible = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SideWall2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3588, -4.65787, 1.35647)
-shape = SubResource("BoxShape3D_x23wt")
 
 [node name="NextLevel" parent="." instance=ExtResource("5_iy6sp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.5375, 0.921374, -3.02118)
