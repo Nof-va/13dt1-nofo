@@ -39,6 +39,7 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_n2mfi")
 
 [node name="controller" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 top_level = true
 
 [node name="target" type="Node3D" parent="controller"]

@@ -64,4 +64,8 @@ next_level = ExtResource("10_xsijp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.20445, -0.111612, -4.11367)
 door = NodePath("../Door")
 
+[node name="Area3D" parent="." instance=ExtResource("5_w38fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0419, 0.82067, -3.93836)
+item = ExtResource("6_a0utu")
+
 [connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_body_entered"]
