@@ -6,12 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://rc5fcal65tce" path="res://Scenes/checkpoint.tscn" id="4_ibsu3"]
 [ext_resource type="PackedScene" uid="uid://cdn2sfrfu2sa4" path="res://Scenes/next_level.tscn" id="5_iy6sp"]
 [ext_resource type="MeshLibrary" uid="uid://b6flnivibl80i" path="res://Assets/Textures/world_blocks_v1.tres" id="6_8u3ph"]
+[ext_resource type="PackedScene" uid="uid://cex1rnecp1ak8" path="res://Scenes/tut_door.tscn" id="6_ogaki"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r6gl3"]
 size = Vector3(132.359, 2.41455, 19.8372)
-
-[sub_resource type="Resource" id="Resource_qb2jq"]
-metadata/__load_path__ = "res://Scenes/key_lvl.tscn"
 
 [node name="Node3D" type="Node3D"]
 
@@ -43,7 +41,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.8114, 0.646729, -2.07153)
 
 [node name="NextLevel" parent="." instance=ExtResource("5_iy6sp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.5375, 0.921374, -3.02118)
-next_level = SubResource("Resource_qb2jq")
+next_level = ExtResource("6_ogaki")
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("6_8u3ph")

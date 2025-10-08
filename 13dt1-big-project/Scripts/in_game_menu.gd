@@ -2,6 +2,7 @@ extends Node
 
 @onready var player = $"../Player"
 @onready var tree = get_tree()
+@export var main_menu : String
 var currently_paused = false
 
 func _ready() -> void:
@@ -34,10 +35,7 @@ func _on_exitbtn_pressed() -> void:
 
 func _on_checkpointbtn_pressed() -> void:
 	tree.paused = !tree.paused
-	player.position = Global.spawn_point
-	$".".visible = false
-	currently_paused = false
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	get_tree().change_scene_to_file("res://Scenes/" + main_menu)
 
 
 func _on_restartbtn_pressed() -> void:

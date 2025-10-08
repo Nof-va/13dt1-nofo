@@ -6,7 +6,8 @@ extends Node3D
 @export var door : Node3D
 var collider
 
-func _physics_process(delta: float) -> void:
+
+func _physics_process(_delta: float) -> void:
 		
 		
 	if raycast.is_colliding():
@@ -21,4 +22,3 @@ func _physics_process(delta: float) -> void:
 	elif door.door_open == true:
 			door.door_animator.close()
 			door.door_open = false
-	
