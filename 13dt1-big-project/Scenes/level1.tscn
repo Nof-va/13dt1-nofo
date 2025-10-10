@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=3 uid="uid://t8lfbvfw36d6"]
+
+[ext_resource type="PackedScene" uid="uid://bui0dhhoktgxu" path="res://Scenes/in_game_menu.tscn" id="1_rqhku"]
+[ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/player_body.tscn" id="2_cpkqv"]
+[ext_resource type="PackedScene" uid="uid://rc5fcal65tce" path="res://Scenes/checkpoint.tscn" id="3_d1mwp"]
+[ext_resource type="Script" uid="uid://bav040fifgynp" path="res://Scripts/death_zone.gd" id="4_u1b78"]
+[ext_resource type="PackedScene" uid="uid://dk6jsjqogbpjp" path="res://Scenes/item_button.tscn" id="5_bdr3p"]
+[ext_resource type="PackedScene" uid="uid://dole36dqfpe7d" path="res://Scenes/box_item.tscn" id="6_wwu6c"]
+[ext_resource type="MeshLibrary" uid="uid://b6flnivibl80i" path="res://Assets/Textures/world_blocks_v1.tres" id="7_yymuf"]
+[ext_resource type="PackedScene" uid="uid://bsox5fhocy8mq" path="res://Scenes/door.tscn" id="8_esggg"]
+[ext_resource type="PackedScene" uid="uid://cdn2sfrfu2sa4" path="res://Scenes/next_level.tscn" id="9_nolpu"]
+[ext_resource type="PackedScene" uid="uid://ccys57t3mxxhi" path="res://Scenes/unlock_door_plate.tscn" id="11_af2a1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ocmlb"]
+size = Vector3(142.113, 2.41455, 68.9206)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("1_rqhku")]
+
+[node name="Player" parent="." instance=ExtResource("2_cpkqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+collision_layer = 7
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.536563, 0.25173, -0.805439, 1.12812e-08, 0.95447, 0.298308, 0.84386, -0.160061, 0.512133, -7.45239, 7.95387, 12.1655)
+
+[node name="Checkpoint" parent="." instance=ExtResource("3_d1mwp")]
+
+[node name="DeathZone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8919, -20.0039, 0)
+collision_layer = 33
+collision_mask = 33
+script = ExtResource("4_u1b78")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41393, 0.6, -5.76325)
+shape = SubResource("BoxShape3D_ocmlb")
+
+[node name="Button" parent="." instance=ExtResource("5_bdr3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+item = ExtResource("6_wwu6c")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("7_yymuf")
+collision_layer = 5
+collision_mask = 5
+data = {
+"cells": PackedInt32Array(-5, 65534, 1441792, -5, 65535, 1441792, -4, 65534, 1441792, -4, 65535, 1441792, -3, 65534, 1441792, -3, 65535, 1441792, -2, 65534, 1441792, -2, 65535, 1441792, -1, 65534, 1441792, -1, 65535, 1441792, -65536, 65534, 1441792, -65536, 65535, 1441792, -65535, 65534, 1441792, -65535, 65535, 1441792, -65534, 65534, 1441792, -65534, 65535, 1441792, -65533, 65534, 1441792, -65533, 65535, 1441792, -65532, 65534, 1441792, -65532, 65535, 1441792, -65531, 65534, 1441792, -65531, 65535, 1441792, -65525, 65534, 196608, -65525, 65535, 196608, -65524, 65534, 196608, -65524, 65535, 196608, -65523, 65534, 196608, -65523, 65535, 196608, -65522, 65534, 196608, -65522, 65535, 196608, -65521, 65534, 458752, -65521, 65535, 458752, -65520, 65534, 458752, -65520, 65535, 458752, -65519, 65534, 458752, -65519, 65535, 458752, -5, 0, 1441792, -5, 1, 1441792, -4, 0, 1441792, -4, 1, 1441792, -3, 0, 1441792, -3, 1, 1441792, -2, 0, 1441792, -2, 1, 1441792, -1, 0, 1441792, -1, 1, 1441792, -65536, 0, 1441792, -65536, 1, 1441792, -65535, 0, 1441792, -65535, 1, 1441792, -65534, 0, 1441792, -65534, 1, 1441792, -65533, 0, 1441792, -65533, 1, 1441792, -65532, 0, 1441792, -65532, 1, 1441792, -65531, 0, 1441792, -65531, 1, 1441792, -65525, 0, 196608, -65525, 1, 196608, -65524, 0, 196608, -65524, 1, 196608, -65523, 0, 196608, -65523, 1, 196608, -65522, 0, 196608, -65522, 1, 196608, -65521, 0, 458752, -65521, 1, 458752, -65520, 0, 458752, -65520, 1, 458752, -65519, 0, 458752, -65519, 1, 458752, -65532, 65530, 524288, -65532, 65531, 524288, -65532, 65532, 524288, -65532, 65533, 524288, -65531, 65530, 524288, -65531, 65531, 524288, -65531, 65532, 524288, -65531, 65533, 524288, -65530, 65530, 524288, -65530, 65531, 524288, -65529, 65530, 524288, -65529, 65531, 524288, -65528, 65530, 524288, -65528, 65531, 524288, -65527, 65530, 524288, -65527, 65531, 524288, -65526, 65530, 524288, -65526, 65531, 524288, -65525, 65530, 524288, -65525, 65531, 524288, -65525, 65532, 524288, -65525, 65533, 524288, -65524, 65530, 524288, -65524, 65531, 524288, -65524, 65532, 524288, -65524, 65533, 524288, -65518, 65534, 655360, -65518, 65535, 655360, -65518, 0, 655360, -65518, 1, 655360, -65517, 65534, 655360, -65517, 65535, 655360, -65517, 0, 655360, -65517, 1, 655360, -65516, 65534, 655360, -65516, 65535, 655360, -65516, 0, 655360, -65516, 1, 655360, -65515, 65534, 655360, -65515, 65535, 655360, -65515, 0, 655360, -65515, 1, 655360)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="Door" parent="." instance=ExtResource("8_esggg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 0)
+
+[node name="NextLevel" parent="." instance=ExtResource("9_nolpu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 4.7, 0)
+
+[node name="EasyUnlock" parent="." node_paths=PackedStringArray("door") instance=ExtResource("11_af2a1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 0)
+door = NodePath("")
+
+[connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_body_entered"]

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bmbhywkb1x05g" path="res://Scripts/door_anim.gd" id="2_p0e35"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w6aom"]
-size = Vector3(0.797528, 6.80252, 7.85605)
+size = Vector3(0.797528, 7.94532, 7.85605)
 
 [sub_resource type="BoxMesh" id="BoxMesh_h7j2x"]
 
@@ -13,6 +13,7 @@ script = ExtResource("1_w6aom")
 door_animator = NodePath("AnimatableBody3D")
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 collision_layer = 9
 collision_mask = 9
 script = ExtResource("2_p0e35")
@@ -22,5 +23,5 @@ b = Vector3(0, 10, 0)
 shape = SubResource("BoxShape3D_w6aom")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="AnimatableBody3D"]
-transform = Transform3D(0.5, 0, 0, 0, 6.825, 0, 0, 0, 8, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 mesh = SubResource("BoxMesh_h7j2x")

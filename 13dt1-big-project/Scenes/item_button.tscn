@@ -60,10 +60,9 @@ libraries = {
 }
 
 [node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27933, 0)
 
 [node name="Node3D2" type="Node3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0.282954)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0.283)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Node3D2"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
