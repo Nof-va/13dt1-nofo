@@ -6,9 +6,9 @@ extends AnimatableBody3D
 
 func open():
 	var move_tween = create_tween()
-	move_tween.tween_property(self, "position", b, time)
+	move_tween.tween_property(self, "position", b, time).set_trans(Tween.TRANS_SINE)
 
 
 func close():
 	var move_tween = create_tween()
-	move_tween.tween_property(self, "position", a, time)
+	move_tween.tween_property(self, "position", a, time).set_trans(Tween.TRANS_SINE)

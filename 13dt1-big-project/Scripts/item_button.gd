@@ -24,12 +24,6 @@ func _process(_delta: float) -> void:
 			$AnimationPlayer.play("button_pressed")
 			get_tree().get_first_node_in_group("Moveable").position = $SpawnItem.global_position
 		
-	
-	if item_check == false:
-		print("not here")
-	else:
-		print("here")
-
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):

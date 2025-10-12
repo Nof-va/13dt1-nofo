@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://t8lfbvfw36d6"]
+[gd_scene load_steps=13 format=3 uid="uid://t8lfbvfw36d6"]
 
 [ext_resource type="PackedScene" uid="uid://bui0dhhoktgxu" path="res://Scenes/in_game_menu.tscn" id="1_rqhku"]
 [ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/player_body.tscn" id="2_cpkqv"]
@@ -9,6 +9,7 @@
 [ext_resource type="MeshLibrary" uid="uid://b6flnivibl80i" path="res://Assets/Textures/world_blocks_v1.tres" id="7_yymuf"]
 [ext_resource type="PackedScene" uid="uid://bsox5fhocy8mq" path="res://Scenes/door.tscn" id="8_esggg"]
 [ext_resource type="PackedScene" uid="uid://cdn2sfrfu2sa4" path="res://Scenes/next_level.tscn" id="9_nolpu"]
+[ext_resource type="PackedScene" uid="uid://cqxjriuny4y80" path="res://Scenes/level2.tscn" id="10_rqhku"]
 [ext_resource type="PackedScene" uid="uid://ccys57t3mxxhi" path="res://Scenes/unlock_door_plate.tscn" id="11_af2a1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ocmlb"]
@@ -56,9 +57,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 0)
 
 [node name="NextLevel" parent="." instance=ExtResource("9_nolpu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 4.7, 0)
+next_level = ExtResource("10_rqhku")
 
 [node name="EasyUnlock" parent="." node_paths=PackedStringArray("door") instance=ExtResource("11_af2a1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 0)
-door = NodePath("")
+door = NodePath("../Door")
 
 [connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_body_entered"]
