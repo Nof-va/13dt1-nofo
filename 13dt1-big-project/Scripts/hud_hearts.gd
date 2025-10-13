@@ -2,9 +2,11 @@ extends Control
 
 @export var single_heart: PackedScene
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	reset_lives()
+
 
 func reset_lives():
 	for i in range(0,3):
@@ -14,6 +16,7 @@ func reset_lives():
 func add_life():
 	var hearts = single_heart.instantiate()
 	$Hearts.add_child(hearts)
+
 
 func remove_life():
 		Global.lives -= 1

@@ -1,15 +1,18 @@
-extends Node
+extends CanvasLayer
 
 @onready var player = $"../Player"
 @onready var tree = get_tree()
 @export var main_menu : String
 var currently_paused = false
 
+
 func _ready() -> void:
 	$".".visible = false
 
 
 func _input(_event: InputEvent) -> void:
+	
+	
 	if Input.is_action_just_pressed("pause"):
 		if currently_paused == false:
 			$".".visible = true
@@ -21,6 +24,7 @@ func _input(_event: InputEvent) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			tree.paused = !tree.paused
 			currently_paused = false
+
 
 func _on_resume_pressed() -> void:
 	tree.paused = !tree.paused

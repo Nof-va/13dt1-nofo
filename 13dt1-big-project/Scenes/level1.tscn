@@ -59,7 +59,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 4.7, 0)
 next_level = ExtResource("10_rqhku")
 
-[node name="EasyUnlock" parent="." node_paths=PackedStringArray("door") instance=ExtResource("11_af2a1")]
+[node name="UnlockEasy" parent="." node_paths=PackedStringArray("door") instance=ExtResource("11_af2a1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 0)
 door = NodePath("../Door")
 

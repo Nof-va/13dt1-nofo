@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cqxjriuny4y80"]
+[gd_scene load_steps=14 format=3 uid="uid://cqxjriuny4y80"]
 
 [ext_resource type="PackedScene" uid="uid://bui0dhhoktgxu" path="res://Scenes/in_game_menu.tscn" id="1_lgosu"]
 [ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/player_body.tscn" id="2_mhlpv"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cw1eij87dpt8" path="res://Scenes/moving_platform.tscn" id="6_mmf1u"]
 [ext_resource type="PackedScene" uid="uid://cdn2sfrfu2sa4" path="res://Scenes/next_level.tscn" id="7_vn460"]
 [ext_resource type="PackedScene" uid="uid://bsox5fhocy8mq" path="res://Scenes/door.tscn" id="8_mhlpv"]
+[ext_resource type="PackedScene" uid="uid://rs6de330fq8m" path="res://Scenes/main_menu.tscn" id="8_mmf1u"]
 [ext_resource type="PackedScene" uid="uid://ccys57t3mxxhi" path="res://Scenes/unlock_door_plate.tscn" id="9_ng020"]
 [ext_resource type="PackedScene" uid="uid://dk6jsjqogbpjp" path="res://Scenes/item_button.tscn" id="10_vn2uo"]
 [ext_resource type="PackedScene" uid="uid://dole36dqfpe7d" path="res://Scenes/box_item.tscn" id="11_mtqcm"]
@@ -17,7 +18,7 @@ size = Vector3(142.113, 2.41455, 68.9206)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="CanvasLayer" parent="." instance=ExtResource("1_lgosu")]
+[node name="PauseMenu" parent="." instance=ExtResource("1_lgosu")]
 
 [node name="Player" parent="." instance=ExtResource("2_mhlpv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
@@ -83,11 +84,12 @@ b = Vector3(38, -1, 0)
 
 [node name="NextLevel" parent="." instance=ExtResource("7_vn460")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 4.7, 0)
+next_level = ExtResource("8_mmf1u")
 
 [node name="Door" parent="." instance=ExtResource("8_mhlpv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, -0.039)
 
-[node name="StaticBody3D2" parent="." node_paths=PackedStringArray("door") instance=ExtResource("9_ng020")]
+[node name="UnlockEasy" parent="." node_paths=PackedStringArray("door") instance=ExtResource("9_ng020")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 0, 0)
 door = NodePath("../Door")
 

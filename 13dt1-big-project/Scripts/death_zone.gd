@@ -3,13 +3,15 @@ extends Area3D
 @onready var player = get_parent().get_node("Player")
 var game_over = preload("res://Scenes/main_menu.tscn")
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
+	
 	
 	Global.lives = 3
 
 
 func _on_body_entered(body: Node3D) -> void:
+	
 	
 	if body.is_in_group("Player") and Global.lives > 0:
 		player.visible = false
