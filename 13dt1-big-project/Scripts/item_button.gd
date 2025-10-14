@@ -1,6 +1,8 @@
 extends Area3D
 
-@export var item : PackedScene
+@export var item: PackedScene
+@export var button_animator: AnimationPlayer
+@export var spawn_location: Marker3D
 var player
 var player_check = false
 var item_check = false
@@ -16,13 +18,13 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("interact") and player_check == true:
 		if item_check == false:
-			$AnimationPlayer.play("button_pressed")
+			button_animator.play("button_pressed")
 			get_parent().add_child(this_item)
-			this_item.position = $SpawnItem.global_position
+			this_item.position = spawn_location.global_position
 			item_check = true
 		else:
-			$AnimationPlayer.play("button_pressed")
-			get_tree().get_first_node_in_group("Moveable").position = $SpawnItem.global_position
+			button_animator.play("button_pressed")
+			get_tree().get_first_node_in_group("Moveable").position = spawn_location.global_position
 		
 
 func _on_body_entered(body: Node3D) -> void:

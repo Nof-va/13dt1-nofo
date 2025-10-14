@@ -10,7 +10,8 @@ func _on_startbtn_pressed() -> void:
 
 
 func _on_settingsbtn_pressed() -> void:
-	get_tree().change_scene_to_file("settings") # Placeholder allocation
+	pass
+	# get_tree().change_scene_to_file("settings") # Placeholder allocation
 
 
 func _on_exitbtn_pressed() -> void:

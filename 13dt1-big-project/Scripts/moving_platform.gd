@@ -11,7 +11,6 @@ func _ready() -> void:
 
 func move():
 	
-	
 	# Animated movement between points A and B
 	var move_tween = create_tween()
 	move_tween.tween_property(self, "position", b, time).set_trans(Tween.TRANS_SINE).set_delay(pause)

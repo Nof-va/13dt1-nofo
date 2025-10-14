@@ -1,13 +1,13 @@
 extends CanvasLayer
 
+@export var main_menu: String
+@export var pause_menu: CanvasLayer
+var currently_paused = false
 @onready var player = $"../Player"
 @onready var tree = get_tree()
-@export var main_menu : String
-var currently_paused = false
-
 
 func _ready() -> void:
-	$".".visible = false
+	pause_menu.visible = false
 
 
 func _input(_event: InputEvent) -> void:
@@ -15,12 +15,12 @@ func _input(_event: InputEvent) -> void:
 	
 	if Input.is_action_just_pressed("pause"):
 		if currently_paused == false:
-			$".".visible = true
+			pause_menu.visible = true
 			tree.paused = !tree.paused
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			currently_paused = true
 		else:
-			$".".visible = false
+			pause_menu.visible = false
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			tree.paused = !tree.paused
 			currently_paused = false
@@ -28,7 +28,7 @@ func _input(_event: InputEvent) -> void:
 
 func _on_resume_pressed() -> void:
 	tree.paused = !tree.paused
-	$".".visible = false
+	pause_menu.visible = false
 	currently_paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -37,7 +37,7 @@ func _on_exitbtn_pressed() -> void:
 	get_tree().quit()
 
 
-func _on_checkpointbtn_pressed() -> void:
+func _on_main_menubtn_pressed() -> void:
 	tree.paused = !tree.paused
 	get_tree().change_scene_to_file("res://Scenes/" + main_menu)
 

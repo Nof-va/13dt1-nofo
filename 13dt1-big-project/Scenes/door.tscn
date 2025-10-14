@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsox5fhocy8mq"]
+[gd_scene load_steps=6 format=3 uid="uid://bsox5fhocy8mq"]
 
 [ext_resource type="Script" uid="uid://bftkkjx5rmgps" path="res://Scripts/door.gd" id="1_w6aom"]
 [ext_resource type="Script" uid="uid://bmbhywkb1x05g" path="res://Scripts/door_anim.gd" id="2_p0e35"]
@@ -7,6 +7,9 @@
 size = Vector3(0.797528, 7.94532, 7.85605)
 
 [sub_resource type="BoxMesh" id="BoxMesh_h7j2x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p0e35"]
+albedo_color = Color(0, 0.647059, 0.721569, 1)
 
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("door_animator")]
 script = ExtResource("1_w6aom")
@@ -26,3 +29,4 @@ shape = SubResource("BoxShape3D_w6aom")
 [node name="CSGMesh3D" type="CSGMesh3D" parent="AnimatableBody3D"]
 transform = Transform3D(0.5, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 mesh = SubResource("BoxMesh_h7j2x")
+material = SubResource("StandardMaterial3D_p0e35")

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cnlcqu71hdfen" path="res://Scripts/hud_hearts.gd" id="1_6c8c5"]
 [ext_resource type="PackedScene" uid="uid://chgxkbks030o0" path="res://Scenes/single_heart.tscn" id="2_p2f3o"]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" node_paths=PackedStringArray("hearts_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,6 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6c8c5")
 single_heart = ExtResource("2_p2f3o")
+hearts_container = NodePath("Hearts")
 
 [node name="Hearts" type="HBoxContainer" parent="."]
 layout_mode = 1

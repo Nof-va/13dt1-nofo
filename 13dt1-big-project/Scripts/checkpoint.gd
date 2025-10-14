@@ -1,11 +1,10 @@
 extends Area3D
 
-@export var checkpoint_animator : AnimationPlayer
-@export var respawn_point : Marker3D
+@export var checkpoint_animator: AnimationPlayer
+@export var respawn_point: Marker3D
 
 
 func _on_body_entered(body: Node3D) -> void:
-	
 	
 	# Indicates player has reached a new checkpoint and changes current position of spawn
 	if body.is_in_group("Player"):

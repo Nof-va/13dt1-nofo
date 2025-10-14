@@ -15,10 +15,11 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lgl56"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" node_paths=PackedStringArray("pause_menu")]
 process_mode = 3
 script = ExtResource("2_2rnyg")
 main_menu = "main_menu.tscn"
+pause_menu = NodePath(".")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -103,7 +104,7 @@ text = "Restart Level"
 custom_minimum_size = Vector2(0, 37.67)
 layout_mode = 2
 
-[node name="Checkpointbtn" type="Button" parent="Control/VBoxContainer"]
+[node name="MainMenubtn" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -157,5 +158,5 @@ color = Color(0, 0, 0, 0.411765)
 
 [connection signal="pressed" from="Control/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Restartbtn" to="." method="_on_restartbtn_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/Checkpointbtn" to="." method="_on_checkpointbtn_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/MainMenubtn" to="." method="_on_main_menubtn_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Exitbtn" to="." method="_on_exitbtn_pressed"]

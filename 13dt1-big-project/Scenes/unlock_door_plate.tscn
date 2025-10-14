@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccys57t3mxxhi"]
+[gd_scene load_steps=5 format=3 uid="uid://ccys57t3mxxhi"]
 
 [ext_resource type="Script" uid="uid://7ic58guxue6q" path="res://Scripts/unlock_door.gd" id="1_nrapy"]
 
@@ -7,6 +7,9 @@ height = 0.518066
 radius = 0.76123
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_b0ete"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nrapy"]
+albedo_color = Color(0, 0.647828, 0.721225, 1)
 
 [node name="StaticBody3D2" type="StaticBody3D" node_paths=PackedStringArray("raycast", "key_place")]
 collision_layer = 9
@@ -22,6 +25,7 @@ shape = SubResource("CylinderShape3D_1ffao")
 transform = Transform3D(1.5, 0, 0, 0, 0.25, 0, 0, 0, 1.5, 0, 0, 0)
 mesh = SubResource("CylinderMesh_b0ete")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_nrapy")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)

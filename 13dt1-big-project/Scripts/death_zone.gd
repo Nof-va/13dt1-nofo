@@ -1,18 +1,14 @@
 extends Area3D
 
-@onready var player = get_parent().get_node("Player")
 var game_over = preload("res://Scenes/main_menu.tscn")
+@onready var player = get_parent().get_node("Player")
 
 
 func _ready() -> void:
-	
-	
 	Global.lives = 3
 
 
 func _on_body_entered(body: Node3D) -> void:
-	
-	
 	if body.is_in_group("Player") and Global.lives > 0:
 		player.visible = false
 		await get_tree().create_timer(0.5).timeout

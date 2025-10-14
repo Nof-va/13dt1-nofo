@@ -1,9 +1,9 @@
 extends Control
 
 @export var single_heart: PackedScene
+@export var hearts_container : HBoxContainer
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	reset_lives()
 
@@ -15,11 +15,11 @@ func reset_lives():
 
 func add_life():
 	var hearts = single_heart.instantiate()
-	$Hearts.add_child(hearts)
+	hearts_container.add_child(hearts)
 
 
 func remove_life():
 		Global.lives -= 1
-		var hearts = $Hearts.get_children()
+		var hearts = hearts_container.get_children()
 		var health = len(hearts)
-		$Hearts.get_child(health - 1).queue_free()
+		hearts_container.get_child(health - 1).queue_free()

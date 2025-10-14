@@ -19,11 +19,13 @@ no_depth_test = true
 shading_mode = 0
 albedo_color = Color(0, 0.812099, 0.824048, 1)
 
-[node name="Node3D" type="CharacterBody3D" node_paths=PackedStringArray("hearts") groups=["Player"]]
+[node name="Node3D" type="CharacterBody3D" node_paths=PackedStringArray("hearts", "player_mesh", "camera_controller") groups=["Player"]]
 collision_layer = 15
 collision_mask = 15
 script = ExtResource("1_qyis3")
 hearts = NodePath("Control")
+player_mesh = NodePath("Body")
+camera_controller = NodePath("controller")
 
 [node name="Body" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_1m5js")
