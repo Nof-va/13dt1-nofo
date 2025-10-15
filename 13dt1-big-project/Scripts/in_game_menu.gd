@@ -11,8 +11,6 @@ func _ready() -> void:
 
 
 func _input(_event: InputEvent) -> void:
-	
-	
 	if Input.is_action_just_pressed("pause"):
 		if currently_paused == false:
 			pause_menu.visible = true

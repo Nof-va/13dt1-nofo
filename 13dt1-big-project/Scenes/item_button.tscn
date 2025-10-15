@@ -47,8 +47,10 @@ _data = {
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xui7j"]
 albedo_color = Color(1, 0, 0, 1)
 
-[node name="Area3D" type="Area3D"]
+[node name="Area3D" type="Area3D" node_paths=PackedStringArray("button_animator", "spawn_location")]
 script = ExtResource("1_m7sj4")
+button_animator = NodePath("AnimationPlayer")
+spawn_location = NodePath("SpawnItem")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.019104, 0.913119, 0.0610659)

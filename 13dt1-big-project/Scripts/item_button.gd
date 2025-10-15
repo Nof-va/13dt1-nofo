@@ -13,7 +13,6 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	
 	var this_item = item.instantiate()
 	
 	if Input.is_action_just_pressed("interact") and player_check == true:
@@ -25,7 +24,7 @@ func _process(_delta: float) -> void:
 		else:
 			button_animator.play("button_pressed")
 			get_tree().get_first_node_in_group("Moveable").position = spawn_location.global_position
-		
+
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):

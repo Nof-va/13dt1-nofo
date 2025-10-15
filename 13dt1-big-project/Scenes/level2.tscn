@@ -54,32 +54,32 @@ metadata/_editor_floor_ = Vector3(0, 2, 0)
 
 [node name="MovingPlatform" parent="." instance=ExtResource("6_mmf1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, -1, 0)
-a = Vector3(14, 9, 0)
+a = Vector3(14, 5, 0)
 b = Vector3(14, -1, 0)
 
 [node name="MovingPlatform2" parent="." instance=ExtResource("6_mmf1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -1, 0)
-a = Vector3(18, -11, 0)
+a = Vector3(18, -6, 0)
 b = Vector3(18, -1, 0)
 
 [node name="MovingPlatform3" parent="." instance=ExtResource("6_mmf1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -1, 0)
-a = Vector3(22, 9, 0)
+a = Vector3(22, 5, 0)
 b = Vector3(22, -1, 0)
 
 [node name="MovingPlatform4" parent="." instance=ExtResource("6_mmf1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -1, 0)
-a = Vector3(30, 9, 0)
+a = Vector3(30, 5, 0)
 b = Vector3(30, -1, 0)
 
 [node name="MovingPlatform5" parent="." instance=ExtResource("6_mmf1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, -1, 0)
-a = Vector3(34, -11, 0)
+a = Vector3(34, -6, 0)
 b = Vector3(34, -1, 0)
 
 [node name="MovingPlatform6" parent="." instance=ExtResource("6_mmf1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, -1, 0)
-a = Vector3(38, 9, 0)
+a = Vector3(38, 5, 0)
 b = Vector3(38, -1, 0)
 
 [node name="NextLevel" parent="." instance=ExtResource("7_vn460")]

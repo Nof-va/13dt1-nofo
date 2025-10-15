@@ -1,7 +1,7 @@
 extends Control
 
 @export var single_heart: PackedScene
-@export var hearts_container : HBoxContainer
+@export var hearts_container: HBoxContainer
 
 
 func _ready():

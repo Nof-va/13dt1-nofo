@@ -8,11 +8,9 @@ var collider
 
 
 func _physics_process(_delta: float) -> void:
-	
 	# Check if key item has been placed on the unlocking mechanism
 	if raycast.is_colliding():
 		collider = raycast.get_collider()
-		
 		# Opens door if item is the key item
 		if collider.is_in_group("Moveable"):
 			if door.door_open == false:

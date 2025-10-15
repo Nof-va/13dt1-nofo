@@ -17,7 +17,7 @@ next_pass = SubResource("StandardMaterial3D_fqsl3")
 transparency = 1
 no_depth_test = true
 shading_mode = 0
-albedo_color = Color(0, 0.812099, 0.824048, 1)
+albedo_color = Color(0.340339, 0.340339, 0.340339, 1)
 
 [node name="Node3D" type="CharacterBody3D" node_paths=PackedStringArray("hearts", "player_mesh", "camera_controller") groups=["Player"]]
 collision_layer = 15
