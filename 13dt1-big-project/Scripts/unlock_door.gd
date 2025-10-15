@@ -1,6 +1,5 @@
 extends Node3D
 
-
 @export var raycast : RayCast3D
 @export var key_place : Marker3D
 @export var door : Node3D

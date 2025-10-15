@@ -10,7 +10,6 @@ const PUSH = 2
 @export var camera_smoothing_z = 0.05
 @export var player_mesh: CollisionShape3D
 @export var camera_controller: Node3D
-var menu_pack = preload("res://Scenes/in_game_menu.tscn")
 var pause_is = false
 var last_direction = Vector3.FORWARD
 

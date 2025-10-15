@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://cc2hauyds7o0w"]
+
+[ext_resource type="Script" uid="uid://bv373arksdi7x" path="res://Scripts/construction.gd" id="1_y71ls"]
+[ext_resource type="PackedScene" uid="uid://rs6de330fq8m" path="res://Scenes/main_menu.tscn" id="2_rtqli"]
+[ext_resource type="FontFile" uid="uid://beng7naqslpfg" path="res://Assets/Fonts/Baby Doll.otf" id="3_il2xw"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_y71ls")
+main_menu_scene = ExtResource("2_rtqli")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 645.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 150
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "UNDER CONSTRUCTION..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Exitbtn" type="Button" parent="Control/MarginContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_il2xw")
+theme_override_font_sizes/font_size = 60
+text = "Leave?"
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/MarginContainer3/Exitbtn" to="." method="_on_exitbtn_pressed"]

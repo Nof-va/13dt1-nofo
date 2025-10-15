@@ -1,6 +1,6 @@
 extends Area3D
 
-var game_over_screen = preload("res://Scenes/main_menu.tscn")
+@export var game_over_screen: PackedScene
 @onready var player = get_parent().get_node("Player")
 
 

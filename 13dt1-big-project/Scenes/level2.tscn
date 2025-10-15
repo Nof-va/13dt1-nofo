@@ -37,6 +37,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8919, -20.0039, 0)
 collision_layer = 33
 collision_mask = 33
 script = ExtResource("4_vn2uo")
+game_over_screen = ExtResource("8_mmf1u")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZone"]

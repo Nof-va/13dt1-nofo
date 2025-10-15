@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmqy4al8lne3h"]
+[gd_scene load_steps=11 format=3 uid="uid://dmqy4al8lne3h"]
 
 [ext_resource type="PackedScene" uid="uid://bui0dhhoktgxu" path="res://Scenes/in_game_menu.tscn" id="1_biqcg"]
 [ext_resource type="PackedScene" uid="uid://qyvxj6m7bb1f" path="res://Scenes/player_body.tscn" id="2_r1jtb"]
 [ext_resource type="PackedScene" uid="uid://rc5fcal65tce" path="res://Scenes/checkpoint.tscn" id="3_pvf62"]
 [ext_resource type="Script" uid="uid://bav040fifgynp" path="res://Scripts/death_zone.gd" id="4_4h5r4"]
+[ext_resource type="PackedScene" uid="uid://rs6de330fq8m" path="res://Scenes/main_menu.tscn" id="5_pvf62"]
 [ext_resource type="PackedScene" uid="uid://cdn2sfrfu2sa4" path="res://Scenes/next_level.tscn" id="7_biqcg"]
 [ext_resource type="MeshLibrary" uid="uid://b6flnivibl80i" path="res://Assets/Textures/world_blocks_v1.tres" id="7_tpaam"]
 [ext_resource type="PackedScene" uid="uid://t8lfbvfw36d6" path="res://Scenes/level1.tscn" id="8_pvf62"]
@@ -36,6 +37,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8919, -20.0039, 0)
 collision_layer = 33
 collision_mask = 33
 script = ExtResource("4_4h5r4")
+game_over_screen = ExtResource("5_pvf62")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZone"]
